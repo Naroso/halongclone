@@ -5,16 +5,16 @@
     <form class="form-search" method="post" action="/cruises/find-a-cruise.html">
       <h1 class="text-center text-bold">Find your perfect cruise</h1>
       <div class="form-group">
-        <input class="form-control" id="txtName" type="text" placeholder="Cruise name..." autocomplete="off"/>
-        <div class="sub-form-search sub-cruise" id="resultCruiseName"></div>
+        <input class="form-control" id="txtName" type="text" placeholder="Cruise name..." autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"/>
+        <div class="sub-form-search sub-cruise" id="resultCruiseName" style="display: none;"></div>
       </div>
       <div class="form-group">
-        <input class="form-control" id="check-in" name="check-in" type="text" placeholder="Check-in"/><span class="form-control-feedback fa fa-calendar"></span>
-        <div class="sub-form-search"></div>
+        <input class="form-control datepick" id="check-in" name="check-in" type="text" placeholder="Check-in" readonly="true"/><span class="form-control-feedback fa fa-calendar"></span>
+        <div class="sub-form-search" style="display: none;"></div>
       </div>
       <div class="form-group">
         <input class="form-control" id="triptype" type="text" placeholder="All trip types" onfocus="blur();"/><span class="form-control-feedback fa fa-angle-down"></span>
-        <div class="sub-form-search sub-triptype">
+        <div class="sub-form-search sub-triptype" style="display: none;">
           <ul class="f-list">
             <li>All trip types</li>
             <li value="1">Luxury Cruises</li>
@@ -29,7 +29,7 @@
       </div>
       <div class="form-group">
         <input class="form-control" id="duration" type="text" placeholder="All duration" onfocus="blur();"/><span class="form-control-feedback fa fa-angle-down"></span>
-        <div class="sub-form-search sub-duration">
+        <div class="sub-form-search sub-duration" style="display: none;">
           <ul class="f-list">
             <li value="">All durations</li>
             <li value="1">Full day</li>
@@ -40,7 +40,7 @@
       </div>
       <div class="form-group">
         <input class="form-control" id="prices" type="text" placeholder="All prices" onfocus="blur();"/><span class="form-control-feedback fa fa-angle-down"></span>
-        <div class="sub-form-search sub-prices">
+        <div class="sub-form-search sub-prices" style="display: none;">
           <ul class="f-list">
             <li value="">All prices</li>
             <li value="50;100">50 - 100 USD</li>

@@ -1,0 +1,310 @@
+extends ../index
+
+block page_script
+    script(type='text/javascript', src='../js/pages/cruisecat-dist.js')
+
+block content
+    #container_1.grid_12.t_space_bottom
+        #container_2.cat-banner
+            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/09/NEWEST-CRUISES_1a.jpg', alt='')
+            .breadcrumb-main
+                .container
+                    ol.breadcrumb
+                        li
+                            a(href='/')
+                                span.reb Home
+                        li
+                            a(href='/cruises/find-a-cruise.html') Find a cruise
+                        li.active Halong Bay Newest Cruises
+            h1.z_24.f_hn.text-normal.text-uppercase(style='left: 366.5px;') Halong Bay Newest Cruises
+        nav.nav-cat
+            .container
+                ul
+                    li
+                        a(href='/interactive-map.html')
+                            i.inc.inc-map
+                            span Interactive map
+                    li
+                        a(href='/trip-planning/weather.html')
+                            i.inc.inc-weather
+                            span Weather
+                    li
+                        a(href='/trip-planning/prepare-go/how-to-get-to-halong-bay.html')
+                            i.inc.inc-setting
+                            span Getting there
+                    li
+                        a(href='/destinations.html')
+                            i.inc.inc-binoculars
+                            span Attractions
+                    li
+                        a(href='/activities.html')
+                            i.inc.inc-rowing
+                            span Activities
+        #container_3.cat-wrap
+            #container_4.container
+                .cat-header.box-hidden
+                    .socials.pull-right
+                        .likePost
+                            .social
+                                #fb-root.fb_reset
+                                    div(style='position: absolute; top: -10000px; height: 0px; width: 0px;')
+                                        div
+                                           // iframe#fb_xdm_frame_https(name='fb_xdm_frame_https', frameborder='0', allowtransparency='true', allowfullscreen='true', scrolling='no', aria-hidden='true', title='Facebook Cross Domain Communication Frame', tabindex='-1', src='https://staticxx.facebook.com/connect/xd_arbiter/r/0F7S7QWJ0Ac.js?version=42#channel=fe2eb22b5f4df8&origin=https%3A%2F%2Fwww.halongbaytours.com', style='border: none;')
+                                    div(style='position: absolute; top: -10000px; height: 0px; width: 0px;')
+                                        div
+                                script.
+                                    (function (d, s, id) {
+                                        var js, fjs = d.getElementsByTagName(s)[0];
+                                        if (d.getElementById(id)) {
+                                            return;
+                                        }
+                                        js = d.createElement(s);
+                                        js.id = id;
+                                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                                        fjs.parentNode.insertBefore(js, fjs);
+                                    }(document, 'script', 'facebook-jssdk'));
+                                .fb-like.fb_iframe_widget(data-send='true', data-layout='button_count', data-width='80', data-show-faces='true', fb-xfbml-state='rendered', fb-iframe-plugin-query='app_id=&container_width=0&href=https%3A%2F%2Fwww.halongbaytours.com%2Fcruises%2Fnewest-cruises.html&layout=button_count&locale=en_US&sdk=joey&send=true&show_faces=true&width=80')
+                                    span(style='vertical-align: bottom; width: 104px; height: 20px;')
+                                        iframe(name='f25c42c85470a48', width='80px', height='1000px', frameborder='0', allowtransparency='true', allowfullscreen='true', scrolling='no', title='fb:like Facebook Social Plugin', src='https://www.facebook.com/plugins/like.php?app_id=&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2F0F7S7QWJ0Ac.js%3Fversion%3D42%23cb%3Df3525a18ccc18a8%26domain%3Dwww.halongbaytours.com%26origin%3Dhttps%253A%252F%252Fwww.halongbaytours.com%252Ffe2eb22b5f4df8%26relation%3Dparent.parent&container_width=0&href=https%3A%2F%2Fwww.halongbaytours.com%2Fcruises%2Fnewest-cruises.html&layout=button_count&locale=en_US&sdk=joey&send=true&show_faces=true&width=80', style='border: none; visibility: visible; width: 104px; height: 20px;')
+                    h2.title.f_hn.z_24.text-normal.pull-left Halong Bay Newest Cruises
+                .cat-intro
+                    .hg-more
+                        p
+                            | Halong Bay cruise collection is updated annually with both newly built and newly redecorated cruises. Below is the latest cruises that were launched and soon to be launched. The most anticipated cruise of 2016 is Orchid cruise, a state-of-the-art body of infrastructure with cabins ranging from 36 to 72 sqm. Orchid cruise is to be launched on November 1st, 2016. In addition, Paradise Cruise has announced its new addition of Paradise Elegance Cruise which will start its run on December 1st, 2016. Besides the newly built cruise, many also see excellent retouching work such as Pelican cruise, Oasis Bay Cruise and La Vela Premium cruise, to name a few.
+                    div
+                        a#readmore Read more
+                .cat-main
+                    .cat-sort
+                        h3.title.f_hn.z_24.text-normal.pull-left Our Top Picks for May
+                        .pull-right
+                            label.inline-block Sort by:
+                            .has-feedback.inline-block
+                                input#sort.form-control(type='text', placeholder='', value='Most Popular')
+                                span.form-control-feedback.fa.fa-angle-down
+                                .sub-most.bg-default
+                                    ul.list-check
+                                        li.active(onclick="sort('priority DESC');") Most Popular
+                                        li(onclick="sort('overall DESC');") Top Rated
+                                        li(onclick="sort('price ASC');") Price (Low - High)
+                                        li(onclick="sort('price DESC');") Price (High - Low)
+                    .cat-list
+                        #result
+                            .row
+                                .col-lg-4.col-sm-6
+                                    .item
+                                        a.cl-img(href='/cruise/orchid-cruise.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2017/03/Orchid-Cruise_2_square.jpg', alt='')
+                                            span#w108.heart-o.inline-block.text-center.btnwl(onclick='return false') 480
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/cruise/orchid-cruise.html') Orchid Cruise
+                                                    span.text-special  NEW
+                                                .box-review
+                                                    label.rate-1
+                                                        span(style='width: 100%;')
+                                                    label.review
+                                                        span.text-bold.inline-block.text-center.n-rate 9.7
+                                                        strong.inline-block.text-uppercase Excellent
+                                                        a.n-review.inline-block(href='#')
+                                                            b 68
+                                                            |  reviews
+                                                .price.text-right
+                                                    | From USD
+                                                    label.block.f_hn.z_24
+                                                        sup $
+                                                        b 175
+                                            address
+                                                i.fa.fa-map-marker.c2a
+                                                strong Address:
+                                                |  5/33B Pham Ngu Lao, Hoan Kiem, Hanoi
+                                            #owl-home-1
+                                                .tag
+                                                    i.fa.fa-tags
+                                                    |  Amazing Deal 2017: Free 60’ body/foot massage
+                                        .cl-checkbox.text-right.hidden-xs
+                                            ul.re-checkbox
+                                                li
+                                                    input#cm108.star-chose(type='checkbox', name='cruise', value='108')
+                                                    label#label108(for='cm108') Add to compare
+                                .col-lg-4.col-sm-6
+                                    .item
+                                        a.cl-img(href='/cruise/paradise-luxury-elegance.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2017/03/Elegance_Cruise_1_square.jpg', alt='')
+                                            span#w106.heart-o.inline-block.text-center.btnwl(onclick='return false') 74
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/cruise/paradise-luxury-elegance.html') Paradise Elegance Cruise
+                                                    span.text-special  NEW
+                                                .box-review
+                                                    label.rate-1
+                                                        span(style='width: 100%;')
+                                                    label.review
+                                                        span.text-bold.inline-block.text-center.n-rate 9.7
+                                                        strong.inline-block.text-uppercase Excellent
+                                                        a.n-review.inline-block(href='#')
+                                                            b 3
+                                                            |  reviews
+                                                .price(style='padding-right: 0;')
+                                                    button.btn.btn-get-price.btn-get-price-sm.btnGetprice(type='button', alt='Paradise Elegance Cruise', data-currency='$', data-toggle='modal', data-target='#priceModal') Check price
+                                            address
+                                                i.fa.fa-map-marker.c2a
+                                                strong Address:
+                                                |  Tuan Chau Island, Halong, Vietnam
+                                            #owl-home-1
+                                                .tag
+                                                    i.fa.fa-tags
+                                                    |  Great Summer Sales: Up to 30% discount
+                                        .cl-checkbox.text-right.hidden-xs
+                                            ul.re-checkbox
+                                                li
+                                                    input#cm106.star-chose(type='checkbox', name='cruise', value='106')
+                                                    label#label106(for='cm106') Add to compare
+                                .col-lg-4.col-sm-6
+                                    .item
+                                        a.cl-img(href='/cruise/carina-cruise.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2017/02/carinacruise_b_square.jpg', alt='')
+                                            span#w124.heart-o.inline-block.text-center.btnwl(onclick='return false') 19
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/cruise/carina-cruise.html') Carina Cruise
+                                                    span.text-special  NEW
+                                                .box-review
+                                                    label.rate-1
+                                                        span(style='width: 80%;')
+                                                    label.review
+                                                        span.text-bold.inline-block.text-center.n-rate 9.2
+                                                        strong.inline-block.text-uppercase Excellent
+                                                        a.n-review.inline-block(href='#')
+                                                            b 4
+                                                            |  reviews
+                                                .price.text-right
+                                                    | From USD
+                                                    label.block.f_hn.z_24
+                                                        sup $
+                                                        b 130
+                                            address
+                                                i.fa.fa-map-marker.c2a
+                                                strong Address:
+                                                |  33C Pham Ngu Lao, Hanoi, Vietnam
+                                        .cl-checkbox.text-right.hidden-xs
+                                            ul.re-checkbox
+                                                li
+                                                    input#cm124.star-chose(type='checkbox', name='cruise', value='124')
+                                                    label#label124(for='cm124') Add to compare
+                                .col-lg-4.col-sm-6.mb-hide
+                                    .item
+                                        a.cl-img(href='/cruise/alisa-cruise.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2017/02/alisacruise_1_square.jpg', alt='')
+                                            span#w127.heart-o.inline-block.text-center.btnwl(onclick='return false') 12
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/cruise/alisa-cruise.html') Alisa Cruise
+                                                    span.text-special  NEW
+                                                .box-review
+                                                    label.rate-1
+                                                        span(style='width: 100%;')
+                                                    label.review
+                                                        strong.inline-block.text-uppercase
+                                                .price.text-right
+                                                    | From USD
+                                                    label.block.f_hn.z_24
+                                                        sup $
+                                                        b 145
+                                            address
+                                                i.fa.fa-map-marker.c2a
+                                                strong Address:
+                                        .cl-checkbox.text-right.hidden-xs
+                                            ul.re-checkbox
+                                                li
+                                                    input#cm127.star-chose(type='checkbox', name='cruise', value='127')
+                                                    label#label127(for='cm127') Add to compare
+                                .col-lg-4.col-sm-6.mb-hide
+                                    .item
+                                        a.cl-img(href='/cruise/lafairy-sails.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/06/LaFairy-Sails_2_square.jpg', alt='')
+                                            span#w103.heart-o.inline-block.text-center.btnwl(onclick='return false') 96
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/cruise/lafairy-sails.html') LaFairy Sails
+                                                    span.text-special  NEW
+                                                .box-review
+                                                    label.rate-1
+                                                        span(style='width: 80%;')
+                                                    label.review
+                                                        span.text-bold.inline-block.text-center.n-rate 9.3
+                                                        strong.inline-block.text-uppercase Excellent
+                                                        a.n-review.inline-block(href='#')
+                                                            b 52
+                                                            |  reviews
+                                                .price.text-right
+                                                    | From USD
+                                                    label.block.f_hn.z_24
+                                                        sup $
+                                                        b 149
+                                            address
+                                                i.fa.fa-map-marker.c2a
+                                                strong Address:
+                                                |  No. 14B/20, Ly Nam De str., Hanoi, Vietnam
+                                        .cl-checkbox.text-right.hidden-xs
+                                            ul.re-checkbox
+                                                li
+                                                    input#cm103.star-chose(type='checkbox', name='cruise', value='103')
+                                                    label#label103(for='cm103') Add to compare
+                                .col-lg-4.col-sm-6.mb-hide
+                                    .item
+                                        a.cl-img(href='/cruise/la-vela-premium.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/La-Vela-Premium_1_square.jpg', alt='')
+                                            span#w105.heart-o.inline-block.text-center.btnwl(onclick='return false') 35
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/cruise/la-vela-premium.html') La Vela Premium
+                                                .box-review
+                                                    label.rate-1
+                                                        span(style='width: 100%;')
+                                                    label.review
+                                                        span.text-bold.inline-block.text-center.n-rate 8.4
+                                                        strong.inline-block.text-uppercase Very good
+                                                        a.n-review.inline-block(href='#')
+                                                            b 4
+                                                            |  reviews
+                                                .price.text-right
+                                                    | From USD
+                                                    label.block.f_hn.z_24
+                                                        sup $
+                                                        b 160
+                                            address
+                                                i.fa.fa-map-marker.c2a
+                                                strong Address:
+                                                |  Unit 201, 2nd Floor, Hanoi Tower - The Office, 49 Hai Ba Trung Str, Hanoi, Vietnam
+                                        .cl-checkbox.text-right.hidden-xs
+                                            ul.re-checkbox
+                                                li
+                                                    input#cm105.star-chose(type='checkbox', name='cruise', value='105')
+                                                    label#label105(for='cm105') Add to compare
+                        .cl-more.text-center
+                            input#show-number(type='hidden', name='show-number', value='12')
+                            input#cruise-number(type='hidden', name='cruise-number', value='12')
+                            input#category_id(type='hidden', value='9')
+                            input#sorthide(type='hidden', value='priority DESC')
+                            a.inline-block.c6.show-more
+                                | Show More
+                                i.fa.fa-chevron-down
+                        form#frmCompare(action='/cruises/compare.html', method='post')
+                            input#compare(type='hidden', value='', name='compare')
+                form#frmCompare(action='/cruises/compare.html', method='post')
+                    input#compare(type='hidden', value='', name='compare')
+                .box-help
+                    img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/skins/v3/images/av-hepl.png', alt='')
+                    h5.z_16.text-bold Looking for a private Halong cruising experience?
+                    p
+                        | Finding a private charter cruise in Halong Bay is as simple as booking a hotel online. Contact our
+                        | charter experts to get free advice and quote.
+                    a.btn.btn-style-1.z_14.text-bold(href='/contact-us.html')
+                        | Ask Us Now
+                        i.fa.fa-angle-right

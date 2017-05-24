@@ -1,0 +1,2086 @@
+extends ../index
+
+block page_style
+    link(href='../css/cruise.css', media='screen', rel='stylesheet', type='text/css')
+
+block page_script
+    script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false')
+    script(type='text/javascript', src='../js/pages/search-dist.js')
+    script(type='text/javascript', src='../js/pages/_category-dist.js')
+
+block content
+    .breadcrumb-main.hidden-xs
+        .container
+            ol.breadcrumb
+                li
+                    a(href='/')
+                        span.reb Home
+                li.active Find a cruise
+    .deal-box-mb.z_12.hidden-lg.hidden-md.hidden-sm
+        .container
+            a(href='/promotion.html')
+                .pull-left
+                    i.fa.fa-tags
+                    |  TODAY’S DEALS
+            a.pull-right(href='/contact-us.html')
+                i.fa.fa-phone
+                |  CALL US
+    #container_1.d-main.d-main-listing
+        #container_2.container
+            h4.summary.f_hn.z_18
+                | Halong bay:
+                span#lbltotalc 113
+                |  Cruise itineraries.
+                span#lblshowc  Showing 1 – 10
+            .row
+                .col-md-3.refine-mb
+                    .filter-header.box-hidden
+                        .pull-left.z_18
+                            | Filter
+                            span.hidden-sm.hidden-xs by:
+                        ul.list-inline.pull-right.hidden-lg.hidden-md
+                            li
+                                a(href='#', data-dismiss='modal', aria-label='Close') Cancel
+                            li
+                                a(href='#', data-dismiss='modal', aria-label='Close') Apply
+                    .w-item.w-selections.w-border.w-rows.bg-default(style='display:none;')
+                        .w-select-head
+                            h6.pull-left.z_14.lh18 Your selections
+                            strong#clearall.pull-right Clear all
+                        .w-select-body
+                            ul.ul-result-search
+                    .w-chose-wrap.w-border
+                        .w-item.w-rows.w-chose.bg-default.w-option
+                            h6.w-label
+                                | Cruise Options
+                                span.fa.fa-chevron-up
+                            .w-dropdown
+                                ul.w-radio-star
+                                    li
+                                        input#ce1.star-chose.transferbottom(type='checkbox', name='price', value='1')
+                                        label(for='ce1') Free Shuttle Bus
+                                    li
+                                        input#ce2.star-chose.catbottom(type='checkbox', name='price', value='6')
+                                        label(for='ce2') Kid Friendly
+                                    li
+                                        input#ce3.star-chose.newestbottom(type='checkbox', name='price', value='t.cruise_id DESC')
+                                        label(for='ce3') Newest Cruises
+                        .w-item.w-search-cruise-name.bg-default
+                            .input-group
+                                input#txtName.form-control(type='text', placeholder='Cruise name...', name='keyword', autocomplete='off', value='')
+                                #resultCruiseName.sub-form-search.sub-cruise
+                                span.input-group-btn
+                                    button.btn.btn-default.choose-name(type='button')
+                                        span.fa.fa-search.z_18.c07
+                        .w-item.w-rating.w-rows.w-chose.bg-default
+                            h6.w-label
+                                | Star rating
+                                span.fa.fa-chevron-up
+                            .w-dropdown
+                                ul.w-radio-star
+                                    li.star-1
+                                        input#cs1.star-chose.starsbottom(type='checkbox', name='star-rating', value='1')
+                                        label.rate-2(for='cs1')
+                                            span(style='width: 100%;')
+                                        span.rate-num 0
+                                    li.star-2
+                                        input#cs2.star-chose.starsbottom(type='checkbox', name='star-rating', value='2')
+                                        label.rate-2(for='cs2')
+                                            span(style='width: 100%;')
+                                        span.rate-num 0
+                                    li.star-3
+                                        input#cs3.star-chose.starsbottom(type='checkbox', name='star-rating', value='3')
+                                        label.rate-2(for='cs3')
+                                            span(style='width: 100%;')
+                                        span.rate-num 16
+                                    li.star-4
+                                        input#cs4.star-chose.starsbottom(type='checkbox', name='star-rating', value='4')
+                                        label.rate-2(for='cs4')
+                                            span(style='width: 100%;')
+                                        span.rate-num 35
+                                    li.star-5
+                                        input#cs5.star-chose.starsbottom(type='checkbox', name='star-rating', value='5')
+                                        label.rate-2(for='cs5')
+                                            span(style='width: 100%;')
+                                        span.rate-num 62
+                        .w-item.w-rows.w-chose.bg-default
+                            h6.w-label
+                                | Price per person
+                                span.fa.fa-chevron-up
+                            .w-dropdown
+                                ul.w-radio-star
+                                    li
+                                        input#cp1.star-chose.pricesbottom(type='checkbox', alt='1', value='50;150')
+                                        label(for='cp1') 50 to $150
+                                    li
+                                        input#cp2.star-chose.pricesbottom(type='checkbox', alt='2', value='150;250')
+                                        label(for='cp2') 150 to $250
+                                    li
+                                        input#cp3.star-chose.pricesbottom(type='checkbox', alt='3', value='250;350')
+                                        label(for='cp3') 250 to $350
+                                    li
+                                        input#cp4.star-chose.pricesbottom(type='checkbox', alt='4', value='350;500')
+                                        label(for='cp4') 350 to $500
+                                    li
+                                        input#cp5.star-chose.pricesbottom(type='checkbox', alt='5', value='500;999999')
+                                        label(for='cp5') Over $500
+                        .w-item.w-rows.w-chose.bg-default
+                            h6.w-label
+                                | Activities
+                                span.fa.fa-chevron-up
+                            .w-dropdown
+                                .w-scroll-wrap
+                                    ul.w-radio-star.w-scroll
+                                        li
+                                            input#ca13.star-chose.activitiesbottom(type='checkbox', name='activities', value='13')
+                                            label(for='ca13') Snorkeling
+                                        li
+                                            input#ca12.star-chose.activitiesbottom(type='checkbox', name='activities', value='12')
+                                            label(for='ca12') Climbing
+                                        li
+                                            input#ca11.star-chose.activitiesbottom(type='checkbox', name='activities', value='11')
+                                            label(for='ca11') Dining in cave
+                                        li
+                                            input#ca10.star-chose.activitiesbottom(type='checkbox', name='activities', value='10')
+                                            label(for='ca10') Cycling
+                                        li
+                                            input#ca9.star-chose.activitiesbottom(type='checkbox', name='activities', value='9')
+                                            label(for='ca9') Swimming
+                                        li
+                                            input#ca8.star-chose.activitiesbottom(type='checkbox', name='activities', value='8')
+                                            label(for='ca8') BBQ on beach
+                                        li
+                                            input#ca7.star-chose.activitiesbottom(type='checkbox', name='activities', value='7')
+                                            label(for='ca7') Cooking Class
+                                        li
+                                            input#ca6.star-chose.activitiesbottom(type='checkbox', name='activities', value='6')
+                                            label(for='ca6') Kayaking
+                                        li
+                                            input#ca5.star-chose.activitiesbottom(type='checkbox', name='activities', value='5')
+                                            label(for='ca5') Squid Fishing
+                                        li
+                                            input#ca4.star-chose.activitiesbottom(type='checkbox', name='activities', value='4')
+                                            label(for='ca4') Spa
+                                        li
+                                            input#ca3.star-chose.activitiesbottom(type='checkbox', name='activities', value='3')
+                                            label(for='ca3') Fishing Village
+                                        li
+                                            input#ca1.star-chose.activitiesbottom(type='checkbox', name='activities', value='1')
+                                            label(for='ca1') Tai Chi Exercises
+                        .w-item.w-rows.w-chose.bg-default
+                            h6.w-label
+                                | Destinations
+                                span.fa.fa-chevron-up
+                            .w-dropdown
+                                .w-scroll-wrap
+                                    ul.w-radio-star.w-scroll
+                                        li
+                                            input#de1.star-chose.desbottom(type='checkbox', name='destinations', value='1')
+                                            label(for='de1') Halong Bay
+                                        li
+                                            input#de11.star-chose.desbottom(type='checkbox', name='destinations', value='11')
+                                            label(for='de11') Bai Tu Long Bay
+                                        li
+                                            input#de13.star-chose.desbottom(type='checkbox', name='destinations', value='13')
+                                            label(for='de13') Cat Ba Island
+                                        li
+                                            input#de12.star-chose.desbottom(type='checkbox', name='destinations', value='12')
+                                            label(for='de12') Lan Ha Bay
+                                        li
+                                            input#de14.star-chose.desbottom(type='checkbox', name='destinations', value='14')
+                                            label(for='de14') Thien Canh Son Cave
+                                        li
+                                            input#de15.star-chose.desbottom(type='checkbox', name='destinations', value='15')
+                                            label(for='de15') Cong Dam Area
+                                        li
+                                            input#de16.star-chose.desbottom(type='checkbox', name='destinations', value='16')
+                                            label(for='de16') Vung Vieng Fishing Village
+                                        li
+                                            input#de17.star-chose.desbottom(type='checkbox', name='destinations', value='17')
+                                            label(for='de17') Yen Duc Village
+                                        li
+                                            input#de18.star-chose.desbottom(type='checkbox', name='destinations', value='18')
+                                            label(for='de18') Thien Cung Cave
+                                        li
+                                            input#de19.star-chose.desbottom(type='checkbox', name='destinations', value='19')
+                                            label(for='de19') Dau Go Cave
+                                        li
+                                            input#de20.star-chose.desbottom(type='checkbox', name='destinations', value='20')
+                                            label(for='de20') Fighting Cocks Islet
+                                        li
+                                            input#de21.star-chose.desbottom(type='checkbox', name='destinations', value='21')
+                                            label(for='de21') Ti Top Island
+                                        li
+                                            input#de22.star-chose.desbottom(type='checkbox', name='destinations', value='22')
+                                            label(for='de22') Surprise Cave
+                                        li
+                                            input#de23.star-chose.desbottom(type='checkbox', name='destinations', value='23')
+                                            label(for='de23') Drum Cave
+                                        li
+                                            input#de24.star-chose.desbottom(type='checkbox', name='destinations', value='24')
+                                            label(for='de24') Lom Bo Islet
+                                        li
+                                            input#de25.star-chose.desbottom(type='checkbox', name='destinations', value='25')
+                                            label(for='de25') Me Cung Cave
+                                        li
+                                            input#de26.star-chose.desbottom(type='checkbox', name='destinations', value='26')
+                                            label(for='de26') Cua Van Fishing Village
+                                        li
+                                            input#de27.star-chose.desbottom(type='checkbox', name='destinations', value='27')
+                                            label(for='de27') Vung Ha Beach
+                                        li
+                                            input#de28.star-chose.desbottom(type='checkbox', name='destinations', value='28')
+                                            label(for='de28') Tung Gau Area
+                                        li
+                                            input#de29.star-chose.desbottom(type='checkbox', name='destinations', value='29')
+                                            label(for='de29') Tien Ong Cave
+                                        li
+                                            input#de30.star-chose.desbottom(type='checkbox', name='destinations', value='30')
+                                            label(for='de30') Viet Hai Village
+                                        li
+                                            input#de31.star-chose.desbottom(type='checkbox', name='destinations', value='31')
+                                            label(for='de31') Ban Chan Beach
+                                        li
+                                            input#de32.star-chose.desbottom(type='checkbox', name='destinations', value='32')
+                                            label(for='de32') Dark and Bright Cave
+                                        li
+                                            input#de33.star-chose.desbottom(type='checkbox', name='destinations', value='33')
+                                            label(for='de33') Ho Ba Ham Islets
+                                        li
+                                            input#de34.star-chose.desbottom(type='checkbox', name='destinations', value='34')
+                                            label(for='de34') Ba Trai Dao Islets
+                                        li
+                                            input#de35.star-chose.desbottom(type='checkbox', name='destinations', value='35')
+                                            label(for='de35') Cong Do area
+                                        li
+                                            input#de36.star-chose.desbottom(type='checkbox', name='destinations', value='36')
+                                            label(for='de36') Dinh Huong Islet
+                                        li
+                                            input#de37.star-chose.desbottom(type='checkbox', name='destinations', value='37')
+                                            label(for='de37') Soi Sim Island
+                                        li
+                                            input#de38.star-chose.desbottom(type='checkbox', name='destinations', value='38')
+                                            label(for='de38') Luon Cave
+                                        li
+                                            input#de39.star-chose.desbottom(type='checkbox', name='destinations', value='39')
+                                            label(for='de39') Hon Co Island
+                        .w-item.w-rows.w-chose.bg-default
+                            h6.w-label
+                                | Cruise duration
+                                span.fa.fa-chevron-up
+                            .w-dropdown
+                                ul.w-radio-star
+                                    li
+                                        input#cc1.star-chose.durationsbottom(type='checkbox', name='durations', value='1')
+                                        label(for='cc1') Day cruise
+                                    li
+                                        input#cc2.star-chose.durationsbottom(type='checkbox', name='durations', value='2')
+                                        label(for='cc2') 2 Days
+                                    li
+                                        input#cc3.star-chose.durationsbottom(type='checkbox', name='durations', value='3')
+                                        label(for='cc3') 3 Days
+                    ul.btn-act.box-hidden.hidden-lg.hidden-md
+                        li
+                            button.btn.btn-default.btn-block.z_16(data-dismiss='modal', aria-label='Close') Cancel
+                        li
+                            button.btn.btn-style-1d.btn-block.z_16(data-dismiss='modal', aria-label='Close') Apply
+                    input#hdnleftstars(type='hidden', value='')
+                    input#hdnleftprices(type='hidden', value='')
+                    input#hdnleftactivities(type='hidden', value='')
+                    input#hdnleftdurations(type='hidden', value='')
+                    input#hdnNameCruise(type='hidden', value='')
+                    input#hdnleftcat(type='hidden', value='')
+                    input#hdnleftremove(type='hidden', value='0')
+                    input#hdnlefttransfer(type='hidden', value='')
+                    input#hdnleftdes(type='hidden', value='')
+                    input#sortnew(type='hidden', value='')
+                    .w-item.bg-default.w-book-us.hidden-xs.hidden-sm
+                        h5.text-bold.z_14.title Why book with us?
+                        p
+                            | There are at least 6 reasons why you should book Halong Bay cruise and tour on our website.
+                        p
+                            a.btn.btn-style-1.btn-block.text-bold(href='/page/why-book-with-us.html') Learn More
+                        ul.list-check
+                            li
+                                strong Best Price Guaranteed
+                                |                         Enjoy our lowest rate you can find online.
+                            li
+                                strong No hidden fee
+                                |                         No credit card charge. All taxes and service charges included.
+                            li
+                                strong Verified cruise reviews
+                                |                         Real sharing from real travelers.
+                            li
+                                strong Easy change/cancellation
+                                |                         Minimal fee for change/ Cancellation with great flexibility.
+                            li
+                                strong Special promotions and deals
+                                |                         We have what others have not.
+                            li
+                                strong Cruise quality guaranteed
+                                |                         We only select the best cruises for your best experience!
+                        a.more(href='/page/why-book-with-us.html', target='_blank') Show more
+                .col-md-9
+                    #result
+                        .matched
+                            .box-hidden
+                                ul.list-inline.pull-left
+                                    li.text-bold Sort by:
+                                    li
+                                        .has-feedback
+                                            select.form-control.selectSort
+                                                option(value='priority DESC', selected='') Most popular
+                                                option(value='overall DESC') Top rated
+                                                option(value='price ASC') Prices (Low - High)
+                                                option(value='price DESC') Prices (High - Low)
+                                            span.form-control-feedback.fa.fa-sort
+                                ul.list-inline.pull-right.m-pagination.c07.hidden-sm.hidden-xs
+                                    li Page 1 of 12
+                                    li
+                                        a(href='/cruises/find-a-cruise.html/page/2')
+                                            i.fa.fa-angle-right.z_18
+                                    input#totalPage(type='hidden', value='10')
+                                span.pull-right.text-uppercase.btn.btn-refine.z_11.hidden-lg.hidden-md(data-toggle='modal', data-target='#modalRefine') Refine results
+                        .media-cruises
+                            .item
+                                .media-header
+                                    h4.text-bold.f_hn.z_18
+                                        a(href='/cruise/glory-cruise/2-day-1-night.html') Glory Legend Cruise 2 Days
+                                    .box-review
+                                        label.rate-1
+                                            span(style='width: 80%;')
+                                        label.review
+                                            span.text-bold.inline-block.text-center.n-rate 9.4
+                                            strong.inline-block.text-uppercase Excellent
+                                            a.n-review.inline-block(href='/cruise/glory-cruise/2-day-1-night.html')
+                                                b 108
+                                                |  reviews
+                                    ul.re-checkbox.hidden-xs
+                                        li
+                                            input#cm51-1.star-chose(type='checkbox', name='cruise', value='51-1')
+                                            label#label51-1(for='cm51-1') Add to compare
+                                    a#m51.btnsave.heart-o-xs.hidden-lg.hidden-md.hidden-sm.z_18.inline-block
+                                        i.fa.fa-heart-o
+                                .media.media-xs-hide.hidden-xs
+                                    .pull-left.media_left
+                                        a.media_img(href='/cruise/glory-cruise/2-day-1-night.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/08/GloryCruise_1_small.jpg', alt='Glory Legend Cruise')
+                                            span.inline-block.label-img.z_11.label-img-success Mid-Range Cruises
+                                            span#s51.heart-o.inline-block.text-center.btnsave(onclick='return false;')
+                                    .media-body
+                                        .place
+                                            strong
+                                                i.fa.fa-map-marker
+                                                |  Destinations:
+                                            |                                     Surprise Cave, Fighting Cocks Islet , Dinh Huong Islet, Halong Bay, Soi Sim Island, Ti Top Island, Lom Bo Islet
+                                            br
+                                            a#d51.btndateprice(data-toggle='modal', data-target='#itiModal', alt='d1') View full itinerary
+                                        ul.list-check.hidden-xs
+                                            li Best mid-range cruise in Halong Bay
+                                            li Family suites available
+                                            li Triple stay allowed
+                                        .tag
+                                            i.fa.fa-tags
+                                            |  Free Shuttle Bus + Kayaking - Save $30
+                                        .media-caption.text-right
+                                            .box-hidden
+                                                .pull-left.text-left
+                                                    | Days
+                                                    br
+                                                    b.z_18.f_hn 2
+                                                .price-boxpull-right
+                                                    p Prices from:
+                                                    p.price.f_hn.text-bold
+                                                        span.c9.z_12 US
+                                                        b.z_18 $122
+                                                    p.c9 per person
+                                            .included
+                                                i.fa.fa-question-circle
+                                                a.show-included What's Included »
+                                                .included-sub.text-left
+                                                    .head
+                                                        h4.c2a.z_18.f_hn Glory Legend Cruise
+                                                        .in-close.z_18.text-center
+                                                            span.fa.fa-times
+                                                    .body
+                                                        .row
+                                                            .col-md-6
+                                                                h5.text-bold.z_14 Price Inclusion:
+                                                                ul.list-check.plus
+                                                                    li
+                                                                        | Shuttle bus round trip Hanoi - Halong Bay - Hanoi
+                                                                    li
+                                                                        | Accommodation in a twin share or double cabin
+                                                                    li
+                                                                        | All Meals as mentioned in the itinerary (B-= Breakfast, L= Lunch, D= Dinner, BR= Brunch)
+                                                                    li
+                                                                        | An English speaking guide.
+                                                                    li
+                                                                        | Kayaking
+                                                                    li
+                                                                        | Sightseeing admissions
+                                                                    li
+                                                                        | Service charges
+                                                            .col-md-6.col-last
+                                                                h5.text-bold.z_14 Price exclusions:
+                                                                ul.list-check.minus
+                                                                    li
+                                                                        | Drinks.
+                                                                    li
+                                                                        | Personal expenses
+                                                                    li
+                                                                        | Tips are welcome
+                                                                    li
+                                                                        | Airfares
+                                            // Button trigger modal mobile
+                                            button#m51.btn.btn-style-2.btn-modal-mb(type='button', data-toggle='modal', data-target='#roomModal', alt='m1') Overview
+                                            a.btn.btn-style-1d.z_14.btn-block(href='/cruise/glory-cruise/2-day-1-night.html') View More
+                                        span.r-view-all
+                                            i.fa.fa-chevron-down
+                                            |  View all dates and pricing
+                                .media.media-xs-show.hidden-lg.hidden-md.hidden-sm
+                                    a.pull-left.media_left(href='/cruise/glory-cruise/2-day-1-night.html')
+                                        img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/08/GloryCruise_1_small.jpg', alt='Glory Legend Cruise')
+                                    .media-body
+                                        p.c9
+                                            | Prices from
+                                            b.z_18.c5a $122
+                                            |  per person
+                                        .box-hidden.media-xs-info
+                                            a.pull-left(href='/cruise/glory-cruise/2-day-1-night.html') Learn more
+                                            button.btn.btn-style-1d.z_12.text-bold.pull-right.show-price-xs
+                                                | Show prices
+                                                i.fa.fa-chevron-down
+                                .media-sub
+                                    table.table.d-table
+                                        colgroup
+                                            col(width='40%')
+                                            col(width='15%')
+                                            col(width='40%')
+                                            col(width='5%')
+                                        tr
+                                            th Cabin types
+                                            th Max
+                                            th
+                                                p.hidden-xs
+                                                    | Price per cabin
+                                                    span.inline-block.text-normal (1 cabin, double occupancy)
+                                                p.hidden-sm.hidden-md.hidden-lg Price / cabin
+                                            th
+                                                i.fa.fa-times.z_18.r-close
+                                        tr.pin
+                                            td Free Shuttle Bus + Kayaking for all bookings until September 2017
+                                            td
+                                            td.price-show
+                                                | $
+                                                strong 250.00
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/glory-cruise/2-day-1-night.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(51,20)') Glory Suite
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 230
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/glory-cruise/2-day-1-night.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(51,21)') Family Deluxe (3 pax)
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 3
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 380
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/glory-cruise/2-day-1-night.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(51,133)') Family Deluxe (4 pax)
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 4
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 520
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/glory-cruise/2-day-1-night.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(51,19)') Deluxe
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 190
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/glory-cruise/2-day-1-night.html#rates') Book now
+                                    p.text-center.note Notes: Prices include all meals onboard, 5% service charge and 10% VAT.
+                            .item
+                                .media-header
+                                    h4.text-bold.f_hn.z_18
+                                        a(href='/cruise/aphrodite-cruise/2-day-1-night.html') Aphrodite Cruise 2 Days
+                                    .box-review
+                                        label.rate-1
+                                            span(style='width: 100%;')
+                                        label.review
+                                            span.text-bold.inline-block.text-center.n-rate 9.5
+                                            strong.inline-block.text-uppercase Excellent
+                                            a.n-review.inline-block(href='/cruise/aphrodite-cruise/2-day-1-night.html')
+                                                b 124
+                                                |  reviews
+                                    ul.re-checkbox.hidden-xs
+                                        li
+                                            input#cm100-1.star-chose(type='checkbox', name='cruise', value='100-1')
+                                            label#label100-1(for='cm100-1') Add to compare
+                                    a#m100.btnsave.heart-o-xs.hidden-lg.hidden-md.hidden-sm.z_18.inline-block
+                                        i.fa.fa-heart-o
+                                .media.media-xs-hide.hidden-xs
+                                    .pull-left.media_left
+                                        a.media_img(href='/cruise/aphrodite-cruise/2-day-1-night.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Aphrodite_3_small.jpg', alt='Aphrodite Cruise')
+                                            span.inline-block.label-img.z_11.label-img-danger Luxury Cruises
+                                            span#s100.heart-o.inline-block.text-center.btnsave(onclick='return false;')
+                                    .media-body
+                                        .place
+                                            strong
+                                                i.fa.fa-map-marker
+                                                |  Destinations:
+                                            |                                     Halong Bay, Surprise Cave, Ti Top Island, Luon Cave
+                                            br
+                                            a#d100.btndateprice(data-toggle='modal', data-target='#itiModal', alt='d1') View full itinerary
+                                        ul.list-check.hidden-xs
+                                            li Boutique 5 star cruise
+                                            li Family cabin available
+                                            li Friendly English speaking staff
+                                        .media-caption.text-right
+                                            .box-hidden
+                                                .pull-left.text-left
+                                                    | Days
+                                                    br
+                                                    b.z_18.f_hn 2
+                                                .price-boxpull-right
+                                                    p Prices from:
+                                                    p.price.f_hn.text-bold
+                                                        span.c9.z_12 US
+                                                        b.z_18 $160
+                                                    p.c9 per person
+                                            .included
+                                                i.fa.fa-question-circle
+                                                a.show-included What's Included »
+                                                .included-sub.text-left
+                                                    .head
+                                                        h4.c2a.z_18.f_hn Aphrodite Cruise
+                                                        .in-close.z_18.text-center
+                                                            span.fa.fa-times
+                                                    .body
+                                                        .row
+                                                            .col-md-6
+                                                                h5.text-bold.z_14 Price Exclusions:
+                                                                ul.list-check.minus
+                                                                    li
+                                                                        | Transfer round trip Hanoi - Halong - Hanoi (Shuttle bus and private transfer availble)
+                                                                    li
+                                                                        | Beauty Spa Services and Massage
+                                                                    li
+                                                                        | Beverages
+                                                                    li
+                                                                        | Tips and Personal Expenses
+                                                                    li
+                                                                        | All other services not clearly mentioned above
+                                                                    li
+                                                                        | Kayaking is available for $10/person
+                                                                    li
+                                                                        | Surcharge for New Year and Christmas
+                                                            .col-md-6.col-last
+                                                                h5.text-bold.z_14 Price Inclusions:
+                                                                ul.list-check.plus
+                                                                    li
+                                                                        | Welcome Drink
+                                                                    li
+                                                                        | Cruise Itinerary and Program
+                                                                    li
+                                                                        | Entrance and Sightseeing Fees
+                                                                    li
+                                                                        | In-house English-speaking Tour Guide
+                                                                    li
+                                                                        | Luxury Cabins and Suites with A/C
+                                                                    li
+                                                                        | Meals as in program
+                                                                    li
+                                                                        | Insurance and Service Charges.
+                                            // Button trigger modal mobile
+                                            button#m100.btn.btn-style-2.btn-modal-mb(type='button', data-toggle='modal', data-target='#roomModal', alt='m1') Overview
+                                            a.btn.btn-style-1d.z_14.btn-block(href='/cruise/aphrodite-cruise/2-day-1-night.html') View More
+                                        span.r-view-all
+                                            i.fa.fa-chevron-down
+                                            |  View all dates and pricing
+                                .media.media-xs-show.hidden-lg.hidden-md.hidden-sm
+                                    a.pull-left.media_left(href='/cruise/aphrodite-cruise/2-day-1-night.html')
+                                        img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Aphrodite_3_small.jpg', alt='Aphrodite Cruise')
+                                    .media-body
+                                        p.c9
+                                            | Prices from
+                                            b.z_18.c5a $160
+                                            |  per person
+                                        .box-hidden.media-xs-info
+                                            a.pull-left(href='/cruise/aphrodite-cruise/2-day-1-night.html') Learn more
+                                            button.btn.btn-style-1d.z_12.text-bold.pull-right.show-price-xs
+                                                | Show prices
+                                                i.fa.fa-chevron-down
+                                .media-sub
+                                    table.table.d-table
+                                        colgroup
+                                            col(width='40%')
+                                            col(width='15%')
+                                            col(width='40%')
+                                            col(width='5%')
+                                        tr
+                                            th Cabin types
+                                            th Max
+                                            th
+                                                p.hidden-xs
+                                                    | Price per cabin
+                                                    span.inline-block.text-normal (1 cabin, double occupancy)
+                                                p.hidden-sm.hidden-md.hidden-lg Price / cabin
+                                            th
+                                                i.fa.fa-times.z_18.r-close
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(100,101)') Luxury Balcony Cabin
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 310
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/aphrodite-cruise/2-day-1-night.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(100,102)') Family Suite
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 3
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 400
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/aphrodite-cruise/2-day-1-night.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(100,100)') Luxury Window Cabin
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 290
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/aphrodite-cruise/2-day-1-night.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(100,103)') Terrace Suite
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 450
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/aphrodite-cruise/2-day-1-night.html#rates') Book now
+                                    p.text-center.note Notes: Prices include all meals onboard, 5% service charge and 10% VAT.
+                            .item
+                                .media-header
+                                    h4.text-bold.f_hn.z_18
+                                        a(href='/cruise/orchid-cruise/2-day-1-night.html') Orchid Cruise 2 Days
+                                    .box-review
+                                        label.rate-1
+                                            span(style='width: 100%;')
+                                        label.review
+                                            span.text-bold.inline-block.text-center.n-rate 9.7
+                                            strong.inline-block.text-uppercase Excellent
+                                            a.n-review.inline-block(href='/cruise/orchid-cruise/2-day-1-night.html')
+                                                b 68
+                                                |  reviews
+                                    ul.re-checkbox.hidden-xs
+                                        li
+                                            input#cm108-1.star-chose(type='checkbox', name='cruise', value='108-1')
+                                            label#label108-1(for='cm108-1') Add to compare
+                                    a#m108.btnsave.heart-o-xs.hidden-lg.hidden-md.hidden-sm.z_18.inline-block
+                                        i.fa.fa-heart-o
+                                .media.media-xs-hide.hidden-xs
+                                    .pull-left.media_left
+                                        a.media_img(href='/cruise/orchid-cruise/2-day-1-night.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2017/03/Orchid-Cruise_2_small.jpg', alt='Orchid Cruise')
+                                            span.inline-block.label-img.z_11.label-img-danger Luxury Cruises
+                                            span#s108.heart-o.inline-block.text-center.btnsave(onclick='return false;')
+                                    .media-body
+                                        .place
+                                            strong
+                                                i.fa.fa-map-marker
+                                                |  Destinations:
+                                            |                                     Halong Bay, Lan Ha Bay, Ba Trai Dao Islets, Cat Ba Island, Dark and Bright Cave
+                                            br
+                                            a#d108.btndateprice(data-toggle='modal', data-target='#itiModal', alt='d1') View full itinerary
+                                        ul.list-check.hidden-xs
+                                            li Exclusive departure port in Hai Phong- away from the crowd
+                                            li Unique routing
+                                            li Extremely spacious cabin (36-72sqm)
+                                        .tag
+                                            i.fa.fa-tags
+                                            |  Amazing Deal 2017: Free 60’ body/foot massage
+                                        .media-caption.text-right
+                                            .box-hidden
+                                                .pull-left.text-left
+                                                    | Days
+                                                    br
+                                                    b.z_18.f_hn 2
+                                                .price-boxpull-right
+                                                    p Prices from:
+                                                    p.price.f_hn.text-bold
+                                                        span.c9.z_12 US
+                                                        b.z_18 $180
+                                                    p.c9 per person
+                                            .included
+                                                i.fa.fa-question-circle
+                                                a.show-included What's Included »
+                                                .included-sub.text-left
+                                                    .head
+                                                        h4.c2a.z_18.f_hn Orchid Cruise
+                                                        .in-close.z_18.text-center
+                                                            span.fa.fa-times
+                                                    .body
+                                                        .row
+                                                            .col-md-6
+                                                                h5.text-bold.z_14 Price Exclusions:
+                                                                ul.list-check.minus
+                                                                    li
+                                                                        | Transfer from Hanoi to Dinh Vu Port and back
+                                                                    li
+                                                                        | Airfares, and Hotel Accommodation
+                                                                    li
+                                                                        | Visa to Vietnam
+                                                                    li
+                                                                        | Beauty Spa Services and Massage
+                                                                    li
+                                                                        | Beverages and Tobacco
+                                                                    li
+                                                                        | Tax, tips and other Personal Expenses
+                                                                    li
+                                                                        | All other services not clearly mentioned above
+                                                                    li
+                                                                        | Surcharge for New Year, Christmas
+                                                            .col-md-6.col-last
+                                                                h5.text-bold.z_14 Price Inclusions:
+                                                                ul.list-check.plus
+                                                                    li
+                                                                        | Taxes & Service Charges
+                                                                    li
+                                                                        | Welcome Cocktail
+                                                                    li
+                                                                        | Cruise Itinerary and Program
+                                                                    li
+                                                                        | Entrance and Sightseeing Fees
+                                                                    li
+                                                                        | In-house English-speaking Tour Guide
+                                                                    li
+                                                                        | Luxury Cabins and Suites with A/C
+                                                                    li
+                                                                        | Luxury en-suite Bathroom
+                                                                    li
+                                                                        | Meals on board during cruise program
+                                                                    li
+                                                                        | International Breakfast Buffet
+                                                                    li
+                                                                        | Tai Chi Session
+                                                                    li
+                                                                        | Cooking Class
+                                                                    li
+                                                                        | Insurance
+                                            // Button trigger modal mobile
+                                            button#m108.btn.btn-style-2.btn-modal-mb(type='button', data-toggle='modal', data-target='#roomModal', alt='m1') Overview
+                                            a.btn.btn-style-1d.z_14.btn-block(href='/cruise/orchid-cruise/2-day-1-night.html') View More
+                                        span.r-view-all
+                                            i.fa.fa-chevron-down
+                                            |  View all dates and pricing
+                                .media.media-xs-show.hidden-lg.hidden-md.hidden-sm
+                                    a.pull-left.media_left(href='/cruise/orchid-cruise/2-day-1-night.html')
+                                        img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2017/03/Orchid-Cruise_2_small.jpg', alt='Orchid Cruise')
+                                    .media-body
+                                        p.c9
+                                            | Prices from
+                                            b.z_18.c5a $180
+                                            |  per person
+                                        .box-hidden.media-xs-info
+                                            a.pull-left(href='/cruise/orchid-cruise/2-day-1-night.html') Learn more
+                                            button.btn.btn-style-1d.z_12.text-bold.pull-right.show-price-xs
+                                                | Show prices
+                                                i.fa.fa-chevron-down
+                                .media-sub
+                                    table.table.d-table
+                                        colgroup
+                                            col(width='40%')
+                                            col(width='15%')
+                                            col(width='40%')
+                                            col(width='5%')
+                                        tr
+                                            th Cabin types
+                                            th Max
+                                            th
+                                                p.hidden-xs
+                                                    | Price per cabin
+                                                    span.inline-block.text-normal (1 cabin, double occupancy)
+                                                p.hidden-sm.hidden-md.hidden-lg Price / cabin
+                                            th
+                                                i.fa.fa-times.z_18.r-close
+                                        tr.pin
+                                            td Amazing Deal 2017: Free 60’ body/foot massage
+                                            td
+                                            td.price-show
+                                                | $
+                                                strong 0.00
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/orchid-cruise/2-day-1-night.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(108,114)') Suite Balcony
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 320
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/orchid-cruise/2-day-1-night.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(108,116)') Orchid Exclusive Suite
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 570
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/orchid-cruise/2-day-1-night.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(108,115)') Premium suite balcony
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 350
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/orchid-cruise/2-day-1-night.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(108,117)') Family Suite (3 pax)
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 3
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 660
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/orchid-cruise/2-day-1-night.html#rates') Book now
+                                    p.text-center.note Notes: Prices include all meals onboard, 5% service charge and 10% VAT.
+                            .item
+                                .media-header
+                                    h4.text-bold.f_hn.z_18
+                                        a(href='/cruise/glory-cruise/3-days-2-nights.html') Glory Legend Cruise 3 Days
+                                    .box-review
+                                        label.rate-1
+                                            span(style='width: 80%;')
+                                        label.review
+                                            span.text-bold.inline-block.text-center.n-rate 9.4
+                                            strong.inline-block.text-uppercase Excellent
+                                            a.n-review.inline-block(href='/cruise/glory-cruise/3-days-2-nights.html')
+                                                b 108
+                                                |  reviews
+                                    ul.re-checkbox.hidden-xs
+                                        li
+                                            input#cm51-3.star-chose(type='checkbox', name='cruise', value='51-3')
+                                            label#label51-3(for='cm51-3') Add to compare
+                                    a#m51.btnsave.heart-o-xs.hidden-lg.hidden-md.hidden-sm.z_18.inline-block
+                                        i.fa.fa-heart-o
+                                .media.media-xs-hide.hidden-xs
+                                    .pull-left.media_left
+                                        a.media_img(href='/cruise/glory-cruise/3-days-2-nights.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/08/GloryCruise_1_small.jpg', alt='Glory Legend Cruise')
+                                            span.inline-block.label-img.z_11.label-img-success Mid-Range Cruises
+                                            span#s51.heart-o.inline-block.text-center.btnsave(onclick='return false;')
+                                    .media-body
+                                        .place
+                                            strong
+                                                i.fa.fa-map-marker
+                                                |  Destinations:
+                                            |                                     Halong Bay, Surprise Cave, Bai Tu Long Bay, Ti Top Island, Fighting Cocks Islet , Dinh Huong Islet, Soi Sim Island
+                                            br
+                                            a#d51.btndateprice(data-toggle='modal', data-target='#itiModal', alt='d3') View full itinerary
+                                        ul.list-check.hidden-xs
+                                            li Best mid-range cruise in Halong Bay
+                                            li Family suites available
+                                            li Triple stay allowed
+                                        .media-caption.text-right
+                                            .box-hidden
+                                                .pull-left.text-left
+                                                    | Days
+                                                    br
+                                                    b.z_18.f_hn 3
+                                                .price-boxpull-right
+                                                    p Prices from:
+                                                    p.price.f_hn.text-bold
+                                                        span.c9.z_12 US
+                                                        b.z_18 $208
+                                                    p.c9 per person
+                                            .included
+                                                i.fa.fa-question-circle
+                                                a.show-included What's Included »
+                                                .included-sub.text-left
+                                                    .head
+                                                        h4.c2a.z_18.f_hn Glory Legend Cruise
+                                                        .in-close.z_18.text-center
+                                                            span.fa.fa-times
+                                                    .body
+                                                        .row
+                                                            .col-md-6
+                                                                h5.text-bold.z_14 Price Inclusion:
+                                                                ul.list-check.plus
+                                                                    li
+                                                                        | Shuttle bus round trip Hanoi - Halong Bay - Hanoi
+                                                                    li
+                                                                        | Accommodation in a twin share or double cabin
+                                                                    li
+                                                                        | All Meals as mentioned in the itinerary (B-= Breakfast, L= Lunch, D= Dinner, BR= Brunch)
+                                                                    li
+                                                                        | An English speaking guide.
+                                                                    li
+                                                                        | Kayaking
+                                                                    li
+                                                                        | Sightseeing admissions
+                                                                    li
+                                                                        | Service charges
+                                                            .col-md-6.col-last
+                                                                h5.text-bold.z_14 Price exclusions:
+                                                                ul.list-check.minus
+                                                                    li
+                                                                        | Drinks.
+                                                                    li
+                                                                        | Personal expenses
+                                                                    li
+                                                                        | Tips are welcome
+                                                                    li
+                                                                        | Airfares
+                                            // Button trigger modal mobile
+                                            button#m51.btn.btn-style-2.btn-modal-mb(type='button', data-toggle='modal', data-target='#roomModal', alt='m3') Overview
+                                            a.btn.btn-style-1d.z_14.btn-block(href='/cruise/glory-cruise/3-days-2-nights.html') View More
+                                        span.r-view-all
+                                            i.fa.fa-chevron-down
+                                            |  View all dates and pricing
+                                .media.media-xs-show.hidden-lg.hidden-md.hidden-sm
+                                    a.pull-left.media_left(href='/cruise/glory-cruise/3-days-2-nights.html')
+                                        img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/08/GloryCruise_1_small.jpg', alt='Glory Legend Cruise')
+                                    .media-body
+                                        p.c9
+                                            | Prices from
+                                            b.z_18.c5a $208
+                                            |  per person
+                                        .box-hidden.media-xs-info
+                                            a.pull-left(href='/cruise/glory-cruise/3-days-2-nights.html') Learn more
+                                            button.btn.btn-style-1d.z_12.text-bold.pull-right.show-price-xs
+                                                | Show prices
+                                                i.fa.fa-chevron-down
+                                .media-sub
+                                    table.table.d-table
+                                        colgroup
+                                            col(width='40%')
+                                            col(width='15%')
+                                            col(width='40%')
+                                            col(width='5%')
+                                        tr
+                                            th Cabin types
+                                            th Max
+                                            th
+                                                p.hidden-xs
+                                                    | Price per cabin
+                                                    span.inline-block.text-normal (1 cabin, double occupancy)
+                                                p.hidden-sm.hidden-md.hidden-lg Price / cabin
+                                            th
+                                                i.fa.fa-times.z_18.r-close
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(51,20)') Glory Suite
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 380
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/glory-cruise/3-days-2-nights.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(51,21)') Family Deluxe (3 pax)
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 3
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 630
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/glory-cruise/3-days-2-nights.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(51,133)') Family Deluxe (4 pax)
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 4
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 910
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/glory-cruise/3-days-2-nights.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(51,19)') Deluxe
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 330
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/glory-cruise/3-days-2-nights.html#rates') Book now
+                                    p.text-center.note Notes: Prices include all meals onboard, 5% service charge and 10% VAT.
+                            .item
+                                .media-header
+                                    h4.text-bold.f_hn.z_18
+                                        a(href='/cruise/aphrodite-cruise/3-days-2-nights.html') Aphrodite Cruise 3 Days
+                                    .box-review
+                                        label.rate-1
+                                            span(style='width: 100%;')
+                                        label.review
+                                            span.text-bold.inline-block.text-center.n-rate 9.5
+                                            strong.inline-block.text-uppercase Excellent
+                                            a.n-review.inline-block(href='/cruise/aphrodite-cruise/3-days-2-nights.html')
+                                                b 124
+                                                |  reviews
+                                    ul.re-checkbox.hidden-xs
+                                        li
+                                            input#cm100-3.star-chose(type='checkbox', name='cruise', value='100-3')
+                                            label#label100-3(for='cm100-3') Add to compare
+                                    a#m100.btnsave.heart-o-xs.hidden-lg.hidden-md.hidden-sm.z_18.inline-block
+                                        i.fa.fa-heart-o
+                                .media.media-xs-hide.hidden-xs
+                                    .pull-left.media_left
+                                        a.media_img(href='/cruise/aphrodite-cruise/3-days-2-nights.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Aphrodite_3_small.jpg', alt='Aphrodite Cruise')
+                                            span.inline-block.label-img.z_11.label-img-danger Luxury Cruises
+                                            span#s100.heart-o.inline-block.text-center.btnsave(onclick='return false;')
+                                    .media-body
+                                        .place
+                                            strong
+                                                i.fa.fa-map-marker
+                                                |  Destinations:
+                                            |                                     Halong Bay, Luon Cave, Cua Van Fishing Village
+                                            br
+                                            a#d100.btndateprice(data-toggle='modal', data-target='#itiModal', alt='d3') View full itinerary
+                                        ul.list-check.hidden-xs
+                                            li Boutique 5 star cruise
+                                            li Family cabin available
+                                            li Friendly English speaking staff
+                                        .media-caption.text-right
+                                            .box-hidden
+                                                .pull-left.text-left
+                                                    | Days
+                                                    br
+                                                    b.z_18.f_hn 3
+                                                .price-boxpull-right
+                                                    p Prices from:
+                                                    p.price.f_hn.text-bold
+                                                        span.c9.z_12 US
+                                                        b.z_18 $300
+                                                    p.c9 per person
+                                            .included
+                                                i.fa.fa-question-circle
+                                                a.show-included What's Included »
+                                                .included-sub.text-left
+                                                    .head
+                                                        h4.c2a.z_18.f_hn Aphrodite Cruise
+                                                        .in-close.z_18.text-center
+                                                            span.fa.fa-times
+                                                    .body
+                                                        .row
+                                                            .col-md-6
+                                                                h5.text-bold.z_14 Price Exclusions:
+                                                                ul.list-check.minus
+                                                                    li
+                                                                        | Transfer round trip Hanoi - Halong - Hanoi (Shuttle bus and private transfer availble)
+                                                                    li
+                                                                        | Beauty Spa Services and Massage
+                                                                    li
+                                                                        | Beverages
+                                                                    li
+                                                                        | Tips and Personal Expenses
+                                                                    li
+                                                                        | All other services not clearly mentioned above
+                                                                    li
+                                                                        | Kayaking is available for $10/person
+                                                                    li
+                                                                        | Surcharge for New Year and Christmas
+                                                            .col-md-6.col-last
+                                                                h5.text-bold.z_14 Price Inclusions:
+                                                                ul.list-check.plus
+                                                                    li
+                                                                        | Welcome Drink
+                                                                    li
+                                                                        | Cruise Itinerary and Program
+                                                                    li
+                                                                        | Entrance and Sightseeing Fees
+                                                                    li
+                                                                        | In-house English-speaking Tour Guide
+                                                                    li
+                                                                        | Luxury Cabins and Suites with A/C
+                                                                    li
+                                                                        | Meals as in program
+                                                                    li
+                                                                        | Insurance and Service Charges.
+                                            // Button trigger modal mobile
+                                            button#m100.btn.btn-style-2.btn-modal-mb(type='button', data-toggle='modal', data-target='#roomModal', alt='m3') Overview
+                                            a.btn.btn-style-1d.z_14.btn-block(href='/cruise/aphrodite-cruise/3-days-2-nights.html') View More
+                                        span.r-view-all
+                                            i.fa.fa-chevron-down
+                                            |  View all dates and pricing
+                                .media.media-xs-show.hidden-lg.hidden-md.hidden-sm
+                                    a.pull-left.media_left(href='/cruise/aphrodite-cruise/3-days-2-nights.html')
+                                        img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Aphrodite_3_small.jpg', alt='Aphrodite Cruise')
+                                    .media-body
+                                        p.c9
+                                            | Prices from
+                                            b.z_18.c5a $300
+                                            |  per person
+                                        .box-hidden.media-xs-info
+                                            a.pull-left(href='/cruise/aphrodite-cruise/3-days-2-nights.html') Learn more
+                                            button.btn.btn-style-1d.z_12.text-bold.pull-right.show-price-xs
+                                                | Show prices
+                                                i.fa.fa-chevron-down
+                                .media-sub
+                                    table.table.d-table
+                                        colgroup
+                                            col(width='40%')
+                                            col(width='15%')
+                                            col(width='40%')
+                                            col(width='5%')
+                                        tr
+                                            th Cabin types
+                                            th Max
+                                            th
+                                                p.hidden-xs
+                                                    | Price per cabin
+                                                    span.inline-block.text-normal (1 cabin, double occupancy)
+                                                p.hidden-sm.hidden-md.hidden-lg Price / cabin
+                                            th
+                                                i.fa.fa-times.z_18.r-close
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(100,101)') Luxury Balcony Cabin
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 580
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/aphrodite-cruise/3-days-2-nights.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(100,102)') Family Suite
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 3
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 620
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/aphrodite-cruise/3-days-2-nights.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(100,100)') Luxury Window Cabin
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 550
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/aphrodite-cruise/3-days-2-nights.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(100,103)') Terrace Suite
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 750
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/aphrodite-cruise/3-days-2-nights.html#rates') Book now
+                                    p.text-center.note Notes: Prices include all meals onboard, 5% service charge and 10% VAT.
+                            .item
+                                .media-header
+                                    h4.text-bold.f_hn.z_18
+                                        a(href='/cruise/orchid-cruise/3-days-2-nights.html') Orchid Cruise 3 Days
+                                    .box-review
+                                        label.rate-1
+                                            span(style='width: 100%;')
+                                        label.review
+                                            span.text-bold.inline-block.text-center.n-rate 9.7
+                                            strong.inline-block.text-uppercase Excellent
+                                            a.n-review.inline-block(href='/cruise/orchid-cruise/3-days-2-nights.html')
+                                                b 68
+                                                |  reviews
+                                    ul.re-checkbox.hidden-xs
+                                        li
+                                            input#cm108-3.star-chose(type='checkbox', name='cruise', value='108-3')
+                                            label#label108-3(for='cm108-3') Add to compare
+                                    a#m108.btnsave.heart-o-xs.hidden-lg.hidden-md.hidden-sm.z_18.inline-block
+                                        i.fa.fa-heart-o
+                                .media.media-xs-hide.hidden-xs
+                                    .pull-left.media_left
+                                        a.media_img(href='/cruise/orchid-cruise/3-days-2-nights.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2017/03/Orchid-Cruise_2_small.jpg', alt='Orchid Cruise')
+                                            span.inline-block.label-img.z_11.label-img-danger Luxury Cruises
+                                            span#s108.heart-o.inline-block.text-center.btnsave(onclick='return false;')
+                                    .media-body
+                                        .place
+                                            strong
+                                                i.fa.fa-map-marker
+                                                |  Destinations:
+                                            |                                     Halong Bay, Lan Ha Bay, Ba Trai Dao Islets, Viet Hai Village, Dark and Bright Cave
+                                            br
+                                            a#d108.btndateprice(data-toggle='modal', data-target='#itiModal', alt='d3') View full itinerary
+                                        ul.list-check.hidden-xs
+                                            li Exclusive departure port in Hai Phong- away from the crowd
+                                            li Unique routing
+                                            li Extremely spacious cabin (36-72sqm)
+                                        .media-caption.text-right
+                                            .box-hidden
+                                                .pull-left.text-left
+                                                    | Days
+                                                    br
+                                                    b.z_18.f_hn 3
+                                                .price-boxpull-right
+                                                    p Prices from:
+                                                    p.price.f_hn.text-bold
+                                                        span.c9.z_12 US
+                                                        b.z_18 $308
+                                                    p.c9 per person
+                                            .included
+                                                i.fa.fa-question-circle
+                                                a.show-included What's Included »
+                                                .included-sub.text-left
+                                                    .head
+                                                        h4.c2a.z_18.f_hn Orchid Cruise
+                                                        .in-close.z_18.text-center
+                                                            span.fa.fa-times
+                                                    .body
+                                                        .row
+                                                            .col-md-6
+                                                                h5.text-bold.z_14 Price Exclusions:
+                                                                ul.list-check.minus
+                                                                    li
+                                                                        | Transfer from Hanoi to Dinh Vu Port and back
+                                                                    li
+                                                                        | Airfares, and Hotel Accommodation
+                                                                    li
+                                                                        | Visa to Vietnam
+                                                                    li
+                                                                        | Beauty Spa Services and Massage
+                                                                    li
+                                                                        | Beverages and Tobacco
+                                                                    li
+                                                                        | Tax, tips and other Personal Expenses
+                                                                    li
+                                                                        | All other services not clearly mentioned above
+                                                                    li
+                                                                        | Surcharge for New Year, Christmas
+                                                            .col-md-6.col-last
+                                                                h5.text-bold.z_14 Price Inclusions:
+                                                                ul.list-check.plus
+                                                                    li
+                                                                        | Taxes & Service Charges
+                                                                    li
+                                                                        | Welcome Cocktail
+                                                                    li
+                                                                        | Cruise Itinerary and Program
+                                                                    li
+                                                                        | Entrance and Sightseeing Fees
+                                                                    li
+                                                                        | In-house English-speaking Tour Guide
+                                                                    li
+                                                                        | Luxury Cabins and Suites with A/C
+                                                                    li
+                                                                        | Luxury en-suite Bathroom
+                                                                    li
+                                                                        | Meals on board during cruise program
+                                                                    li
+                                                                        | International Breakfast Buffet
+                                                                    li
+                                                                        | Tai Chi Session
+                                                                    li
+                                                                        | Cooking Class
+                                                                    li
+                                                                        | Insurance
+                                            // Button trigger modal mobile
+                                            button#m108.btn.btn-style-2.btn-modal-mb(type='button', data-toggle='modal', data-target='#roomModal', alt='m3') Overview
+                                            a.btn.btn-style-1d.z_14.btn-block(href='/cruise/orchid-cruise/3-days-2-nights.html') View More
+                                        span.r-view-all
+                                            i.fa.fa-chevron-down
+                                            |  View all dates and pricing
+                                .media.media-xs-show.hidden-lg.hidden-md.hidden-sm
+                                    a.pull-left.media_left(href='/cruise/orchid-cruise/3-days-2-nights.html')
+                                        img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2017/03/Orchid-Cruise_2_small.jpg', alt='Orchid Cruise')
+                                    .media-body
+                                        p.c9
+                                            | Prices from
+                                            b.z_18.c5a $308
+                                            |  per person
+                                        .box-hidden.media-xs-info
+                                            a.pull-left(href='/cruise/orchid-cruise/3-days-2-nights.html') Learn more
+                                            button.btn.btn-style-1d.z_12.text-bold.pull-right.show-price-xs
+                                                | Show prices
+                                                i.fa.fa-chevron-down
+                                .media-sub
+                                    table.table.d-table
+                                        colgroup
+                                            col(width='40%')
+                                            col(width='15%')
+                                            col(width='40%')
+                                            col(width='5%')
+                                        tr
+                                            th Cabin types
+                                            th Max
+                                            th
+                                                p.hidden-xs
+                                                    | Price per cabin
+                                                    span.inline-block.text-normal (1 cabin, double occupancy)
+                                                p.hidden-sm.hidden-md.hidden-lg Price / cabin
+                                            th
+                                                i.fa.fa-times.z_18.r-close
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(108,114)') Suite Balcony
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 620
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/orchid-cruise/3-days-2-nights.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(108,116)') Orchid Exclusive Suite
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 990
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/orchid-cruise/3-days-2-nights.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(108,115)') Premium suite balcony
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 580
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/orchid-cruise/3-days-2-nights.html#rates') Book now
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(108,117)') Family Suite (3 pax)
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 3
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 1160
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/orchid-cruise/3-days-2-nights.html#rates') Book now
+                                    p.text-center.note Notes: Prices include all meals onboard, 5% service charge and 10% VAT.
+                            .item
+                                .media-header
+                                    h4.text-bold.f_hn.z_18
+                                        a(href='/cruise/lazalee-day-cruise.html') L'Azalée Day Cruise 1 Day
+                                    .box-review
+                                        label.rate-1
+                                            span(style='width: 80%;')
+                                        label.review
+                                            span.text-bold.inline-block.text-center.n-rate 8.8
+                                            strong.inline-block.text-uppercase Very good
+                                            a.n-review.inline-block(href='/cruise/lazalee-day-cruise.html')
+                                                b 2
+                                                |  reviews
+                                    ul.re-checkbox.hidden-xs
+                                        li
+                                            input#cm107-8.star-chose(type='checkbox', name='cruise', value='107-8')
+                                            label#label107-8(for='cm107-8') Add to compare
+                                    a#m107.btnsave.heart-o-xs.hidden-lg.hidden-md.hidden-sm.z_18.inline-block
+                                        i.fa.fa-heart-o
+                                .media.media-xs-hide.hidden-xs
+                                    .pull-left.media_left
+                                        a.media_img(href='/cruise/lazalee-day-cruise.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/09/LAzalee-Cruises_Day-Cruise_1_small.jpg', alt="L'Azalée Day Cruise")
+                                            span.inline-block.label-img.z_11.label-img-danger Day Cruises
+                                            span#s107.heart-o.inline-block.text-center.btnsave(onclick='return false;')
+                                    .media-body
+                                        .place
+                                            strong
+                                                i.fa.fa-map-marker
+                                                |  Destinations:
+                                            br
+                                            a#d107.btndateprice(data-toggle='modal', data-target='#itiModal', alt='d8') View full itinerary
+                                        ul.list-check.hidden-xs
+                                            li Most luxury day cruise in Halong Bay
+                                            li Open top deck with comfortable seating couch
+                                            li Daily departure available
+                                        .media-caption.text-right
+                                            .box-hidden
+                                                .pull-left.text-left
+                                                    | Days
+                                                    br
+                                                    b.z_18.f_hn 1
+                                                .price-boxpull-right
+                                                    p Prices from:
+                                                    p.price.f_hn.text-bold
+                                                        span.c9.z_12 US
+                                                        b.z_18 $62
+                                                    p.c9 per person
+                                            .included
+                                                i.fa.fa-question-circle
+                                                a.show-included What's Included »
+                                                .included-sub.text-left
+                                                    .head
+                                                        h4.c2a.z_18.f_hn L'Azalée Day Cruise
+                                                        .in-close.z_18.text-center
+                                                            span.fa.fa-times
+                                                    .body
+                                                        .row
+                                            // Button trigger modal mobile
+                                            button#m107.btn.btn-style-2.btn-modal-mb(type='button', data-toggle='modal', data-target='#roomModal', alt='m8') Overview
+                                            a.btn.btn-style-1d.z_14.btn-block(href='/cruise/lazalee-day-cruise.html') View More
+                                        span.r-view-all
+                                            i.fa.fa-chevron-down
+                                            |  View all dates and pricing
+                                .media.media-xs-show.hidden-lg.hidden-md.hidden-sm
+                                    a.pull-left.media_left(href='/cruise/lazalee-day-cruise.html')
+                                        img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/09/LAzalee-Cruises_Day-Cruise_1_small.jpg', alt="L'Azalée Day Cruise")
+                                    .media-body
+                                        p.c9
+                                            | Prices from
+                                            b.z_18.c5a $62
+                                            |  per person
+                                        .box-hidden.media-xs-info
+                                            a.pull-left(href='/cruise/lazalee-day-cruise.html') Learn more
+                                            button.btn.btn-style-1d.z_12.text-bold.pull-right.show-price-xs
+                                                | Show prices
+                                                i.fa.fa-chevron-down
+                                .media-sub
+                                    table.table.d-table
+                                        colgroup
+                                            col(width='40%')
+                                            col(width='15%')
+                                            col(width='40%')
+                                            col(width='5%')
+                                        tr
+                                            th Cabin types
+                                            th Max
+                                            th
+                                                p.hidden-xs
+                                                    | Price per cabin
+                                                    span.inline-block.text-normal (1 cabin, double occupancy)
+                                                p.hidden-sm.hidden-md.hidden-lg Price / cabin
+                                            th
+                                                i.fa.fa-times.z_18.r-close
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(107,113)') Day Cruise
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 1
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 62
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/lazalee-day-cruise.html#rates') Book now
+                                    p.text-center.note Notes: Prices include all meals onboard, 5% service charge and 10% VAT.
+                            .item
+                                .media-header
+                                    h4.text-bold.f_hn.z_18
+                                        a(href='/cruise/lazalee-private-charter.html') L'Azalee Private Charter 2 Days
+                                    .box-review
+                                        label.rate-1
+                                            span(style='width: 80%;')
+                                        label.review
+                                    ul.re-checkbox.hidden-xs
+                                        li
+                                            input#cm120-9.star-chose(type='checkbox', name='cruise', value='120-9')
+                                            label#label120-9(for='cm120-9') Add to compare
+                                    a#m120.btnsave.heart-o-xs.hidden-lg.hidden-md.hidden-sm.z_18.inline-block
+                                        i.fa.fa-heart-o
+                                .media.media-xs-hide.hidden-xs
+                                    .pull-left.media_left
+                                        a.media_img(href='/cruise/lazalee-private-charter.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/08/LAzalee_PREMIUM-PRIVATE-DAY_1_small.jpg', alt="L'Azalee Private Charter")
+                                            span.inline-block.label-img.z_11.label-img-danger Private Charter Cruises
+                                            span#s120.heart-o.inline-block.text-center.btnsave(onclick='return false;')
+                                    .media-body
+                                        .place
+                                            strong
+                                                i.fa.fa-map-marker
+                                                |  Destinations:
+                                            |                                     Halong Bay, Ti Top Island, Soi Sim Island
+                                            br
+                                            a#d120.btndateprice(data-toggle='modal', data-target='#itiModal', alt='d9') View full itinerary
+                                        ul.list-check.hidden-xs
+                                        .media-caption.text-right
+                                            .box-hidden
+                                                .pull-left.text-left
+                                                    | Days
+                                                    br
+                                                    b.z_18.f_hn 2
+                                                .price-boxpull-right
+                                                    p Prices from:
+                                                    p.price.f_hn.text-bold
+                                                        span.c9.z_12 US
+                                                        b.z_18 $245
+                                                    p.c9 per person
+                                            .included
+                                                i.fa.fa-question-circle
+                                                a.show-included What's Included »
+                                                .included-sub.text-left
+                                                    .head
+                                                        h4.c2a.z_18.f_hn L'Azalee Private Charter
+                                                        .in-close.z_18.text-center
+                                                            span.fa.fa-times
+                                                    .body
+                                                        .row
+                                                            .col-md-6
+                                                                h5.text-bold.z_14 Price exclusions:
+                                                                ul.list-check.minus
+                                                                    li
+                                                                        | Transfer from Hanoi to Halong Bay and back
+                                                                    li
+                                                                        | Beverages, Tips, Personal Expenses and Services
+                                                                    li
+                                                                        | All service non-clearly mentioned above
+                                                            .col-md-6.col-last
+                                                                h5.text-bold.z_14 Price Inclusion:
+                                                                ul.list-check.plus
+                                                                    li
+                                                                        | Kayaking Services
+                                                                    li
+                                                                        | Welcome drink.
+                                                                    li
+                                                                        | Tea & Coffee.
+                                                                    li
+                                                                        | Entrance and Sightseeing Fees.
+                                                                    li
+                                                                        | Vietnamese Lunch and Dinner, European Breakfast.
+                                                                    li
+                                                                        | Swimming Equipment.
+                                                                    li
+                                                                        | Fishing Equipment.
+                                                                    li
+                                                                        | On board Insurance.
+                                            // Button trigger modal mobile
+                                            button#m120.btn.btn-style-2.btn-modal-mb(type='button', data-toggle='modal', data-target='#roomModal', alt='m9') Overview
+                                            a.btn.btn-style-1d.z_14.btn-block(href='/cruise/lazalee-private-charter.html') View More
+                                        span.r-view-all
+                                            i.fa.fa-chevron-down
+                                            |  View all dates and pricing
+                                .media.media-xs-show.hidden-lg.hidden-md.hidden-sm
+                                    a.pull-left.media_left(href='/cruise/lazalee-private-charter.html')
+                                        img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/08/LAzalee_PREMIUM-PRIVATE-DAY_1_small.jpg', alt="L'Azalee Private Charter")
+                                    .media-body
+                                        p.c9
+                                            | Prices from
+                                            b.z_18.c5a $245
+                                            |  per person
+                                        .box-hidden.media-xs-info
+                                            a.pull-left(href='/cruise/lazalee-private-charter.html') Learn more
+                                            button.btn.btn-style-1d.z_12.text-bold.pull-right.show-price-xs
+                                                | Show prices
+                                                i.fa.fa-chevron-down
+                                .media-sub
+                                    table.table.d-table
+                                        colgroup
+                                            col(width='40%')
+                                            col(width='15%')
+                                            col(width='40%')
+                                            col(width='5%')
+                                        tr
+                                            th Cabin types
+                                            th Max
+                                            th
+                                                p.hidden-xs
+                                                    | Price per cabin
+                                                    span.inline-block.text-normal (1 cabin, double occupancy)
+                                                p.hidden-sm.hidden-md.hidden-lg Price / cabin
+                                            th
+                                                i.fa.fa-times.z_18.r-close
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(120,145)') Charter junk
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 0
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/lazalee-private-charter.html#rates') Book now
+                                    p.text-center.note Notes: Prices include all meals onboard, 5% service charge and 10% VAT.
+                            .item
+                                .media-header
+                                    h4.text-bold.f_hn.z_18
+                                        a(href='/cruise/lazalee-private-charter.html') L'Azalee Private Charter 3 Days
+                                    .box-review
+                                        label.rate-1
+                                            span(style='width: 80%;')
+                                        label.review
+                                    ul.re-checkbox.hidden-xs
+                                        li
+                                            input#cm120-10.star-chose(type='checkbox', name='cruise', value='120-10')
+                                            label#label120-10(for='cm120-10') Add to compare
+                                    a#m120.btnsave.heart-o-xs.hidden-lg.hidden-md.hidden-sm.z_18.inline-block
+                                        i.fa.fa-heart-o
+                                .media.media-xs-hide.hidden-xs
+                                    .pull-left.media_left
+                                        a.media_img(href='/cruise/lazalee-private-charter.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/08/LAzalee_PREMIUM-PRIVATE-DAY_1_small.jpg', alt="L'Azalee Private Charter")
+                                            span.inline-block.label-img.z_11.label-img-danger Private Charter Cruises
+                                            span#s120.heart-o.inline-block.text-center.btnsave(onclick='return false;')
+                                    .media-body
+                                        .place
+                                            strong
+                                                i.fa.fa-map-marker
+                                                |  Destinations:
+                                            |                                     Halong Bay, Cat Ba Island, Ti Top Island, Soi Sim Island
+                                            br
+                                            a#d120.btndateprice(data-toggle='modal', data-target='#itiModal', alt='d10') View full itinerary
+                                        ul.list-check.hidden-xs
+                                        .media-caption.text-right
+                                            .box-hidden
+                                                .pull-left.text-left
+                                                    | Days
+                                                    br
+                                                    b.z_18.f_hn 3
+                                                .price-boxpull-right
+                                                    p Prices from:
+                                                    p.price.f_hn.text-bold
+                                                        span.c9.z_12 US
+                                                        b.z_18 $460
+                                                    p.c9 per person
+                                            .included
+                                                i.fa.fa-question-circle
+                                                a.show-included What's Included »
+                                                .included-sub.text-left
+                                                    .head
+                                                        h4.c2a.z_18.f_hn L'Azalee Private Charter
+                                                        .in-close.z_18.text-center
+                                                            span.fa.fa-times
+                                                    .body
+                                                        .row
+                                                            .col-md-6
+                                                                h5.text-bold.z_14 Price exclusions:
+                                                                ul.list-check.minus
+                                                                    li
+                                                                        | Transfer from Hanoi to Halong Bay and back
+                                                                    li
+                                                                        | Beverages, Tips, Personal Expenses and Services
+                                                                    li
+                                                                        | All service non-clearly mentioned above
+                                                            .col-md-6.col-last
+                                                                h5.text-bold.z_14 Price Inclusion:
+                                                                ul.list-check.plus
+                                                                    li
+                                                                        | Kayaking Services
+                                                                    li
+                                                                        | Welcome drink.
+                                                                    li
+                                                                        | Tea & Coffee.
+                                                                    li
+                                                                        | Entrance and Sightseeing Fees.
+                                                                    li
+                                                                        | Vietnamese Lunch and Dinner, European Breakfast.
+                                                                    li
+                                                                        | Swimming Equipment.
+                                                                    li
+                                                                        | Fishing Equipment.
+                                                                    li
+                                                                        | On board Insurance.
+                                            // Button trigger modal mobile
+                                            button#m120.btn.btn-style-2.btn-modal-mb(type='button', data-toggle='modal', data-target='#roomModal', alt='m10') Overview
+                                            a.btn.btn-style-1d.z_14.btn-block(href='/cruise/lazalee-private-charter.html') View More
+                                        span.r-view-all
+                                            i.fa.fa-chevron-down
+                                            |  View all dates and pricing
+                                .media.media-xs-show.hidden-lg.hidden-md.hidden-sm
+                                    a.pull-left.media_left(href='/cruise/lazalee-private-charter.html')
+                                        img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/08/LAzalee_PREMIUM-PRIVATE-DAY_1_small.jpg', alt="L'Azalee Private Charter")
+                                    .media-body
+                                        p.c9
+                                            | Prices from
+                                            b.z_18.c5a $460
+                                            |  per person
+                                        .box-hidden.media-xs-info
+                                            a.pull-left(href='/cruise/lazalee-private-charter.html') Learn more
+                                            button.btn.btn-style-1d.z_12.text-bold.pull-right.show-price-xs
+                                                | Show prices
+                                                i.fa.fa-chevron-down
+                                .media-sub
+                                    table.table.d-table
+                                        colgroup
+                                            col(width='40%')
+                                            col(width='15%')
+                                            col(width='40%')
+                                            col(width='5%')
+                                        tr
+                                            th Cabin types
+                                            th Max
+                                            th
+                                                p.hidden-xs
+                                                    | Price per cabin
+                                                    span.inline-block.text-normal (1 cabin, double occupancy)
+                                                p.hidden-sm.hidden-md.hidden-lg Price / cabin
+                                            th
+                                                i.fa.fa-times.z_18.r-close
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(120,145)') Charter junk
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 0
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/lazalee-private-charter.html#rates') Book now
+                                    p.text-center.note Notes: Prices include all meals onboard, 5% service charge and 10% VAT.
+                            .item
+                                .media-header
+                                    h4.text-bold.f_hn.z_18
+                                        a(href='/cruise/lazalee-private-charter.html') L'Azalee Private Charter 1 Day
+                                    .box-review
+                                        label.rate-1
+                                            span(style='width: 80%;')
+                                        label.review
+                                    ul.re-checkbox.hidden-xs
+                                        li
+                                            input#cm120-11.star-chose(type='checkbox', name='cruise', value='120-11')
+                                            label#label120-11(for='cm120-11') Add to compare
+                                    a#m120.btnsave.heart-o-xs.hidden-lg.hidden-md.hidden-sm.z_18.inline-block
+                                        i.fa.fa-heart-o
+                                .media.media-xs-hide.hidden-xs
+                                    .pull-left.media_left
+                                        a.media_img(href='/cruise/lazalee-private-charter.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/08/LAzalee_PREMIUM-PRIVATE-DAY_1_small.jpg', alt="L'Azalee Private Charter")
+                                            span.inline-block.label-img.z_11.label-img-danger Private Charter Cruises
+                                            span#s120.heart-o.inline-block.text-center.btnsave(onclick='return false;')
+                                    .media-body
+                                        .place
+                                            strong
+                                                i.fa.fa-map-marker
+                                                |  Destinations:
+                                            |                                     Halong Bay, Dau Go Cave
+                                            br
+                                            a#d120.btndateprice(data-toggle='modal', data-target='#itiModal', alt='d11') View full itinerary
+                                        ul.list-check.hidden-xs
+                                        .media-caption.text-right
+                                            .box-hidden
+                                                .pull-left.text-left
+                                                    | Days
+                                                    br
+                                                    b.z_18.f_hn 1
+                                                .price-boxpull-right
+                                                    p Prices from:
+                                                    p.price.f_hn.text-bold
+                                                        span.c9.z_12 US
+                                                        b.z_18 $103
+                                                    p.c9 per person
+                                            .included
+                                                i.fa.fa-question-circle
+                                                a.show-included What's Included »
+                                                .included-sub.text-left
+                                                    .head
+                                                        h4.c2a.z_18.f_hn L'Azalee Private Charter
+                                                        .in-close.z_18.text-center
+                                                            span.fa.fa-times
+                                                    .body
+                                                        .row
+                                                            .col-md-6
+                                                                h5.text-bold.z_14 Price exclusions:
+                                                                ul.list-check.minus
+                                                                    li
+                                                                        | Transfer from Hanoi to Halong Bay and back
+                                                                    li
+                                                                        | Beverages, Tips, Personal Expenses and Services
+                                                                    li
+                                                                        | All service non-clearly mentioned above
+                                                            .col-md-6.col-last
+                                                                h5.text-bold.z_14 Price Inclusion:
+                                                                ul.list-check.plus
+                                                                    li
+                                                                        | Kayaking Services
+                                                                    li
+                                                                        | Welcome drink.
+                                                                    li
+                                                                        | Tea & Coffee.
+                                                                    li
+                                                                        | Entrance and Sightseeing Fees.
+                                                                    li
+                                                                        | Vietnamese Lunch and Dinner, European Breakfast.
+                                                                    li
+                                                                        | Swimming Equipment.
+                                                                    li
+                                                                        | Fishing Equipment.
+                                                                    li
+                                                                        | On board Insurance.
+                                            // Button trigger modal mobile
+                                            button#m120.btn.btn-style-2.btn-modal-mb(type='button', data-toggle='modal', data-target='#roomModal', alt='m11') Overview
+                                            a.btn.btn-style-1d.z_14.btn-block(href='/cruise/lazalee-private-charter.html') View More
+                                        span.r-view-all
+                                            i.fa.fa-chevron-down
+                                            |  View all dates and pricing
+                                .media.media-xs-show.hidden-lg.hidden-md.hidden-sm
+                                    a.pull-left.media_left(href='/cruise/lazalee-private-charter.html')
+                                        img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/08/LAzalee_PREMIUM-PRIVATE-DAY_1_small.jpg', alt="L'Azalee Private Charter")
+                                    .media-body
+                                        p.c9
+                                            | Prices from
+                                            b.z_18.c5a $103
+                                            |  per person
+                                        .box-hidden.media-xs-info
+                                            a.pull-left(href='/cruise/lazalee-private-charter.html') Learn more
+                                            button.btn.btn-style-1d.z_12.text-bold.pull-right.show-price-xs
+                                                | Show prices
+                                                i.fa.fa-chevron-down
+                                .media-sub
+                                    table.table.d-table
+                                        colgroup
+                                            col(width='40%')
+                                            col(width='15%')
+                                            col(width='40%')
+                                            col(width='5%')
+                                        tr
+                                            th Cabin types
+                                            th Max
+                                            th
+                                                p.hidden-xs
+                                                    | Price per cabin
+                                                    span.inline-block.text-normal (1 cabin, double occupancy)
+                                                p.hidden-sm.hidden-md.hidden-lg Price / cabin
+                                            th
+                                                i.fa.fa-times.z_18.r-close
+                                        tr.prim
+                                            td
+                                                a(onclick='loadroomdetail(120,145)') Charter junk
+                                            td.per.z_12
+                                                i.fa.fa-user
+                                                i.fa.fa-user
+                                                .per-sub.z_12
+                                                    p Max adults: 2
+                                                    p Max children: 1 (up to 12 years of age)
+                                            td.price-show
+                                                | $
+                                                strong
+                                                    | 0
+                                                span.hidden-xs USD
+                                            td
+                                                a.btn.btn-style-1d(href='/cruise/lazalee-private-charter.html#rates') Book now
+                                    p.text-center.note Notes: Prices include all meals onboard, 5% service charge and 10% VAT.
+                        .matched
+                            .box-hidden.bg-default.mb-hide
+                                a.pull-left.c-view.z_14.text-uppercase.btn.btn-default(onclick='compare();') View Comparison
+                                ul.list-inline.pull-right.m-pagination.c07
+                                    li Page 1 of 12
+                                    li
+                                        a(href='/cruises/find-a-cruise.html/page/2')
+                                            i.fa.fa-angle-right.z_18
+                                    input#totalPage(type='hidden', value='10')
+                            p.text-center.mb-show
+                                a.load-more.text-bold.f_hn(onclick="$('#pageindex').val(parseInt($('#pageindex').val())+1);load();")
+                                    | Load more results
+                                    i.fa.fa-chevron-down
+                        form#frmCompare(action='/cruises/compare.html', method='post')
+                            input#compare(type='hidden', value='', name='compare')
+                        input#sort(type='hidden', value='priority DESC')
+                        input#pageindex(type='hidden', value='1')
+                        input#hdnnumItems(type='hidden', value='113')
+                        input#hdncount(type='hidden', value='10')
+                    .text-note.lh24
+                        p
+                            | Please note that all of our cruises have daily departure for both 2 day and 3 day itinerary. Cabin rate is for maximum
+                            | of 2 adults and 1 child under 5 year old. Third person surcharge applies and extra bed or crib is subject to
+                            | availability. All taxes and service charges are included in the listed price (quoted in USD). Cruise price
+                            | may change based on availability or occasional last minute promotion. All photos and specifications presented
+                            | on our website are provided solely by the cruise. Please refer to our terms and conditions for further information.

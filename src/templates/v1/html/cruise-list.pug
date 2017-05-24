@@ -1,4 +1,6 @@
 extends ../index
+block page_script
+    script(type='text/javascript', src='../js/pages/cruisecat-dist.js')
 
 block content
     #container_1.grid_12.t_space_bottom
@@ -46,7 +48,7 @@ block content
                                 #fb-root.fb_reset
                                     div(style='position: absolute; top: -10000px; height: 0px; width: 0px;')
                                         div
-                                            iframe#fb_xdm_frame_https(name='fb_xdm_frame_https', frameborder='0', allowtransparency='true', allowfullscreen='true', scrolling='no', aria-hidden='true', title='Facebook Cross Domain Communication Frame', tabindex='-1', src='https://staticxx.facebook.com/connect/xd_arbiter/r/0F7S7QWJ0Ac.js?version=42#channel=f16cd13e492e794&origin=https%3A%2F%2Fwww.halongbaytours.com', style='border: none;')
+                                            // iframe#fb_xdm_frame_https(name='fb_xdm_frame_https', frameborder='0', allowtransparency='true', allowfullscreen='true', scrolling='no', aria-hidden='true', title='Facebook Cross Domain Communication Frame', tabindex='-1', src='https://staticxx.facebook.com/connect/xd_arbiter/r/0F7S7QWJ0Ac.js?version=42#channel=f16cd13e492e794&origin=https%3A%2F%2Fwww.halongbaytours.com', style='border: none;')
                                     div(style='position: absolute; top: -10000px; height: 0px; width: 0px;')
                                         div
                                 script.

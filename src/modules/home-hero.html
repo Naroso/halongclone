@@ -1,0 +1,62 @@
+
+<!-- Home Hero-->
+<div class="banner">
+  <div class="container">
+    <form class="form-search" method="post" action="/cruises/find-a-cruise.html">
+      <h1 class="text-center text-bold">Find your perfect cruise</h1>
+      <div class="form-group">
+        <input class="form-control" id="txtName" type="text" placeholder="Cruise name..." autocomplete="off"/>
+        <div class="sub-form-search sub-cruise" id="resultCruiseName"></div>
+      </div>
+      <div class="form-group">
+        <input class="form-control" id="check-in" name="check-in" type="text" placeholder="Check-in"/><span class="form-control-feedback fa fa-calendar"></span>
+        <div class="sub-form-search"></div>
+      </div>
+      <div class="form-group">
+        <input class="form-control" id="triptype" type="text" placeholder="All trip types" onfocus="blur();"/><span class="form-control-feedback fa fa-angle-down"></span>
+        <div class="sub-form-search sub-triptype">
+          <ul class="f-list">
+            <li>All trip types</li>
+            <li value="1">Luxury Cruises</li>
+            <li value="2">Mid-Range Cruises</li>
+            <li value="3">Budget Cruises</li>
+            <li value="6">Family Cruises</li>
+            <li value="7">Honeymoon Cruises</li>
+            <li value="8">Best Selling Cruises</li>
+            <li value="9">Newest Cruises</li>
+          </ul>
+        </div>
+      </div>
+      <div class="form-group">
+        <input class="form-control" id="duration" type="text" placeholder="All duration" onfocus="blur();"/><span class="form-control-feedback fa fa-angle-down"></span>
+        <div class="sub-form-search sub-duration">
+          <ul class="f-list">
+            <li value="">All durations</li>
+            <li value="1">Full day</li>
+            <li value="2">2 days / 1 night</li>
+            <li value="3">3 days / 2 nights</li>
+          </ul>
+        </div>
+      </div>
+      <div class="form-group">
+        <input class="form-control" id="prices" type="text" placeholder="All prices" onfocus="blur();"/><span class="form-control-feedback fa fa-angle-down"></span>
+        <div class="sub-form-search sub-prices">
+          <ul class="f-list">
+            <li value="">All prices</li>
+            <li value="50;100">50 - 100 USD</li>
+            <li value="100;250">100 - 250 USD</li>
+            <li value="250;400">250 - 400 USD</li>
+            <li value="400;5000000">400 + USD</li>
+          </ul>
+        </div>
+      </div>
+      <button class="btn btn-style-1 text-uppercase text-bold" type="submit">Search</button><a class="view-all inline-block" href="/cruises/find-a-cruise.html">View all 90 Cruises in Halong bay<span class="fa fa-angle-right"></span></a>
+      <input id="hdnNameCruise" type="hidden" value="" name="keyword"/>
+      <input id="hdnDate" type="hidden" value="" name="date"/>
+      <input id="hdnCategory" type="hidden" value="" name="category"/>
+      <input id="hdnDay" type="hidden" value="" name="day"/>
+      <input id="hdnPrice" type="hidden" value="" name="price"/>
+    </form><a class="btn btn-transparent" href="/why-halong-bay.html"><i class="fa fa-play-circle z_18 text-middle"></i><span class="inline-block text-middle">Why Halong Bay?</span></a>
+  </div>
+</div>
+<!-- End Home Hero-->

@@ -1,0 +1,79 @@
+// Header fix top
+.header-fix-top.hidden-sm.hidden-xs
+    .container
+        .table-block
+            .sub-search-top
+                form(method='post', action='/search.html')
+                    .form-group.has-feedback
+                        input.form-control(type='text', placeholder='What would you like to find?', name='keyword')
+                        button.btn.btn-default
+                            span.fa.fa-search
+                    span.d-close
+                ul.list-related
+                    li
+                        a(href='/cruises/find-a-cruise.html') Looking for cruises?
+                    li
+                        a(href='/cruises/find-a-cruise.html') Start your search here
+                    li
+                        a(href='/wishlist.html') View your favourite cruises
+            ul.logo-cruises.pull-left
+                li
+                    a(href='/cruise/paradise-cruise.html', title='Paradise Cruises')
+                        span.img.paradise
+                        span.name Paradise Cruises
+                li
+                    a(href='/indochina-junks.html', title='Indochina Junk')
+                        span.img.indochina
+                        span.name Indochina Junk
+                li
+                    a(href='/cruise/aphrodite-cruise.html', title='Aphrodite Cruises')
+                        span.img.aphrodite
+                        span.name Aphrodite Cruises
+            ul.top-links.pull-right
+                li.temp
+                    a(href='/trip-planning/weather.html')
+                        i.iw.iw-tstorms
+                        span.inline-block.text-middle 30°C
+                li.heart.dropdown.hide-500
+                    a#d_wishlist(data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                        span.fa.fa-heart.z_18
+                        sup.red-badge.lblwishlist 1
+                        |  My wishlist
+                        i.fa.fa-angle-down
+                    .sub-wishlist.dropdown-menu(aria-labelledby='d_wishlist')
+                        .resultwishlist
+                            .media
+                                a.pull-left(href='/tour-package/package-mercure-hotel-aphrodite-cruise.html')
+                                    img(src='../images/Aphrodite_2_small.jpg', alt='Summer Sizzling Deal: Mercure Hotel + Aphrodite Cruise')
+                                .media-body
+                                    h5.media-heading
+                                        a(href='/tour-package/package-mercure-hotel-aphrodite-cruise.html') Summer Sizzling Deal: Mercure Hotel + Aphrodite Cruise
+                                    label.rate-1
+                                        span(style='width:80%;')
+                                    .price
+                                        | Price from
+                                        strong.block.z_18
+                                            sup.text-normal.z_12 USD
+                                            | 250
+                        p.text-center
+                            a.view-more(href='/wishlist.html') View My wishlist
+                li
+                    a(href='/page/about-us.html') Who we are
+                li
+                    a(href='/promotion.html')
+                        | Deals
+                        sup.red-badge 11
+                li.dropdown
+                    a#language(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                        i.fa.fa-globe
+                        |  English
+                        i.fa.fa-angle-down
+                    .sub-language.dropdown-menu(aria-labelledby='language')
+                        ul.list-languages
+                            li
+                                i.fa.fa-globe
+                                |  International
+                li.hbt-search-top
+                    a.ef-search.text-center
+                        span.fa.fa-search
+// End Header fix top

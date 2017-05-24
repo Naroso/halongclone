@@ -1,0 +1,58 @@
+
+// Home Hero
+.banner
+    .container
+        form.form-search(method='post', action='/cruises/find-a-cruise.html')
+            h1.text-center.text-bold Find your perfect cruise
+            .form-group
+                input#txtName.form-control(type='text', placeholder='Cruise name...', autocomplete='off')
+                #resultCruiseName.sub-form-search.sub-cruise
+            .form-group
+                input#check-in.form-control(name='check-in', type='text', placeholder='Check-in')
+                span.form-control-feedback.fa.fa-calendar
+                .sub-form-search
+            .form-group
+                input#triptype.form-control(type='text', placeholder='All trip types', onfocus='blur();')
+                span.form-control-feedback.fa.fa-angle-down
+                .sub-form-search.sub-triptype
+                    ul.f-list
+                        li All trip types
+                        li(value='1') Luxury Cruises
+                        li(value='2') Mid-Range Cruises
+                        li(value='3') Budget Cruises
+                        li(value='6') Family Cruises
+                        li(value='7') Honeymoon Cruises
+                        li(value='8') Best Selling Cruises
+                        li(value='9') Newest Cruises
+            .form-group
+                input#duration.form-control(type='text', placeholder='All duration', onfocus='blur();')
+                span.form-control-feedback.fa.fa-angle-down
+                .sub-form-search.sub-duration
+                    ul.f-list
+                        li(value='') All durations
+                        li(value='1') Full day
+                        li(value='2') 2 days / 1 night
+                        li(value='3') 3 days / 2 nights
+            .form-group
+                input#prices.form-control(type='text', placeholder='All prices', onfocus='blur();')
+                span.form-control-feedback.fa.fa-angle-down
+                .sub-form-search.sub-prices
+                    ul.f-list
+                        li(value='') All prices
+                        li(value='50;100') 50 - 100 USD
+                        li(value='100;250') 100 - 250 USD
+                        li(value='250;400') 250 - 400 USD
+                        li(value='400;5000000') 400 + USD
+            button.btn.btn-style-1.text-uppercase.text-bold(type='submit') Search
+            a.view-all.inline-block(href='/cruises/find-a-cruise.html')
+                | View all 90 Cruises in Halong bay
+                span.fa.fa-angle-right
+            input#hdnNameCruise(type='hidden', value='', name='keyword')
+            input#hdnDate(type='hidden', value='', name='date')
+            input#hdnCategory(type='hidden', value='', name='category')
+            input#hdnDay(type='hidden', value='', name='day')
+            input#hdnPrice(type='hidden', value='', name='price')
+        a.btn.btn-transparent(href='/why-halong-bay.html')
+            i.fa.fa-play-circle.z_18.text-middle
+            span.inline-block.text-middle Why Halong Bay?
+// End Home Hero

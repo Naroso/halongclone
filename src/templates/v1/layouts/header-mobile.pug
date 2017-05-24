@@ -1,0 +1,28 @@
+// Header Mobile
+header.header-mobile.bg-default.hidden-lg.hidden-md
+    .container-fluid
+        a.logo.inline-block.navbar-left(href='/')
+            img(src='../images/logo.svg', alt='Halong Bay Tours')
+        .hl-header.hl-bars.hidden-lg.hidden-md
+            span.fa.fa-bars
+        #btn-wishlist-1.btn-wishlist-mobile(data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            span.fa.fa-heart.z_18
+            sup.red-badge.lblwishlist 1
+        .sub-wishlist.sub-wishlist-1.dropdown-menu(aria-labelledby='btn-wishlist-1')
+            .resultwishlist
+                .media
+                    a.pull-left(href='/tour-package/package-mercure-hotel-aphrodite-cruise.html')
+                        img(src='../images/Aphrodite_2_small.jpg', alt='Summer Sizzling Deal: Mercure Hotel + Aphrodite Cruise')
+                    .media-body
+                        h5.media-heading
+                            a(href='/tour-package/package-mercure-hotel-aphrodite-cruise.html') Summer Sizzling Deal: Mercure Hotel + Aphrodite Cruise
+                        label.rate-1
+                            span(style='width:80%;')
+                        .price
+                            | Price from
+                            strong.block.z_18
+                                sup.text-normal.z_12 USD
+                                | 250
+            p.text-center
+                a.view-more(href='/wishlist.html') View My wishlist
+// End Header Mobile

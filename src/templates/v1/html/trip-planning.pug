@@ -1,0 +1,360 @@
+extends ../index
+block page_style
+    link(href='../css/article.css', media='screen', rel='stylesheet', type='text/css')
+
+block page_script
+    script(type='text/javascript', src='../js/pages/news-dist.js')
+
+block hero
+    .cat-banner
+        img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/skins/v3/images/travelplanning/bg-banner-planning.jpg', alt='Travel Planning to Halong Bay')
+        .breadcrumb-main
+            .container
+                ol.breadcrumb
+                    li
+                        a(href='/') Home
+                    li Trip Planning
+        .banner-caption
+            span.label-gray.f_hn.z_18.text-uppercase Trip planning
+            h1.f_hn.text-bold Travel information
+
+block content
+    section.ar-main
+        .container
+            .ar-header.box-hidden
+                h2.title24.pull-left Trip Planning
+                .box-hidden.pull-right
+                    .socials.pull-right
+                        .likePost
+                            .social
+                                #fb-root
+                                script.
+                                    (function (d, s, id) {
+                                        var js, fjs = d.getElementsByTagName(s)[0];
+                                        if (d.getElementById(id)) {
+                                            return;
+                                        }
+                                        js = d.createElement(s);
+                                        js.id = id;
+                                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                                        fjs.parentNode.insertBefore(js, fjs);
+                                    }(document, 'script', 'facebook-jssdk'));
+                                .fb-like(data-send='true', data-layout='button_count', data-width='80', data-show-faces='true')
+            .cat-intro.lh24
+                .row
+                    .col-md-8
+                        p
+                            | If you are still unsure whether to put Halong Bay on your to-go list, let us give you some reasons to make up your mind. Halong Bay well deserves every of your minutes traveling. Plan how to get there, use our interactive maps and information about visas, when to go and insiders tips.
+            .tp-filter
+                a(href='/trip-planning/prepare-go.html')
+                    | Prepare & Go
+                    span (5)
+                a(href='/trip-planning/articles-tips.html')
+                    | Articles & Tips
+                    span (8)
+                a(href='/trip-planning/videos-galleries.html')
+                    | Videos & Galleries
+                    span (2)
+                a(href='/trip-planning/weather.html') Weather
+                a(href='/trip-planning/best-time-to-visit.html') Best time to visit
+                a(href='/interactive-map.html') Interactive Map
+            .ar-body-listing
+                h3.title24 Discover Halong Bay Information Centre
+                .row
+                    .col-md-6
+                        .media
+                            a.pull-left(href='/trip-planning/articles-tips/7-things-you-really-need-to-know-about-a-cruise-trip-to-halong-bay.html')
+                                img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/news/admin/2017/04/Bhaya-Classic-Premium-13_small.jpg', alt='7 things you (really) need to know about a cruise trip to Halong Bay')
+                            .media-body
+                                h5.media-heading
+                                    a(href='/trip-planning/articles-tips/7-things-you-really-need-to-know-about-a-cruise-trip-to-halong-bay.html') 7 things you (really) need to know about a cruise trip to Halong Bay
+                                p Don't get caught by surprise: a well-prepared trip most often makes a happy one.
+                                a.more(href='/trip-planning/articles-tips/7-things-you-really-need-to-know-about-a-cruise-trip-to-halong-bay.html') LEARN MORE
+                    .col-md-6
+                        .media
+                            a.pull-left(href='/trip-planning/articles-tips/free-hanoi-walking-tour.html')
+                                img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/news/admin/2016/09/DSC_0238_small.jpg', alt='Enjoy FREE Hanoi walking tour when booking online with us')
+                            .media-body
+                                h5.media-heading
+                                    a(href='/trip-planning/articles-tips/free-hanoi-walking-tour.html') Enjoy FREE Hanoi walking tour when booking online with us
+                                p
+                                a.more(href='/trip-planning/articles-tips/free-hanoi-walking-tour.html') LEARN MORE
+                    .col-md-6
+                        .media
+                            a.pull-left(href='/trip-planning/articles-tips/5-best-cruises-for-family-with-young-kids.html')
+                                img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/news/admin/2016/07/travelling kid_small.jpg', alt='5 Best Cruises for Family with Young Kids')
+                            .media-body
+                                h5.media-heading
+                                    a(href='/trip-planning/articles-tips/5-best-cruises-for-family-with-young-kids.html') 5 Best Cruises for Family with Young Kids
+                                p
+                                    | Travelling with young kids in Halong Bay can sometimes be hard work because you have to keep track of your children almost all the time.
+                                a.more(href='/trip-planning/articles-tips/5-best-cruises-for-family-with-young-kids.html') LEARN MORE
+                    .col-md-6
+                        .media
+                            a.pull-left(href='/trip-planning/articles-tips/tips-for-taking-the-best-photos-in-halong-bay.html')
+                                img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/news/admin/2016/07/photos-halong_small.jpg', alt='Tips for taking the best photos in Halong Bay')
+                            .media-body
+                                h5.media-heading
+                                    a(href='/trip-planning/articles-tips/tips-for-taking-the-best-photos-in-halong-bay.html') Tips for taking the best photos in Halong Bay
+                                p
+                                    | Halong Bay’ breathtaking views offer its visitors a perfect opportunity to add some great shots to to their photography portfolio.
+                                a.more(href='/trip-planning/articles-tips/tips-for-taking-the-best-photos-in-halong-bay.html') LEARN MORE
+                    .col-md-6
+                        .media
+                            a.pull-left(href='/trip-planning/articles-tips/tips-for-travelling-to-halong-bay-while-pregnant.html')
+                                img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/news/admin/2016/07/travelling while prenant_small.jpg', alt='Tips for Travelling to Halong Bay While Pregnant')
+                            .media-body
+                                h5.media-heading
+                                    a(href='/trip-planning/articles-tips/tips-for-travelling-to-halong-bay-while-pregnant.html') Tips for Travelling to Halong Bay While Pregnant
+                                p
+                                    | Being pregnant doesn’t mean that you are stuck at home. Indeed, this can be one of the best times for you to get away and treat yourself with a relaxing cruise trip in Halong.
+                                a.more(href='/trip-planning/articles-tips/tips-for-travelling-to-halong-bay-while-pregnant.html') LEARN MORE
+                    .col-md-6
+                        .media
+                            a.pull-left(href='/trip-planning/articles-tips/tips-for-travelling-with-children-in-halong-bay.html')
+                                img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/news/admin/2016/07/travelling-with-children_small.jpg', alt='Tips for travelling with children in Halong Bay')
+                            .media-body
+                                h5.media-heading
+                                    a(href='/trip-planning/articles-tips/tips-for-travelling-with-children-in-halong-bay.html') Tips for travelling with children in Halong Bay
+                                p
+                                    | It is a great experience when your family can spend time travelling together. However, traveling with children can sometimes be a hard-work.
+                                a.more(href='/trip-planning/articles-tips/tips-for-travelling-with-children-in-halong-bay.html') LEARN MORE
+                    .col-md-6
+                        .media
+                            a.pull-left(href='/trip-planning/articles-tips/6-reasons-to-visit-halong-bay.html')
+                                img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/news/admin/2016/06/halong-bay_small.jpg', alt='6 reasons to visit Halong Bay')
+                            .media-body
+                                h5.media-heading
+                                    a(href='/trip-planning/articles-tips/6-reasons-to-visit-halong-bay.html') 6 reasons to visit Halong Bay
+                                p
+                                    | If you are still unsure whether to put Halong Bay on your to-go list, let us give you some reasons to make up your mind.
+                                a.more(href='/trip-planning/articles-tips/6-reasons-to-visit-halong-bay.html') LEARN MORE
+                    .col-md-6
+                        .media
+                            a.pull-left(href='/trip-planning/prepare-go/how-to-get-to-halong-bay.html')
+                                img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/news/admin/2016/06/halong-bay-bhaya-classic-cruise-4_small.jpg', alt='How to get to Halong Bay ')
+                            .media-body
+                                h5.media-heading
+                                    a(href='/trip-planning/prepare-go/how-to-get-to-halong-bay.html') How to get to Halong Bay
+                                p
+                                    | The most common departure cities are Hanoi and Hai Phong, both of which have her own international airports and a complex of highway that connects to Halong Bay.
+                                a.more(href='/trip-planning/prepare-go/how-to-get-to-halong-bay.html') LEARN MORE
+                    .col-md-6
+                        .media
+                            a.pull-left(href='/trip-planning/articles-tips/tips-for-choosing-the-right-cruise-in-halong-bay.html')
+                                img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/news/admin/2016/06/bhay2_small.jpg', alt='Tips for choosing the right cruise in Halong Bay')
+                            .media-body
+                                h5.media-heading
+                                    a(href='/trip-planning/articles-tips/tips-for-choosing-the-right-cruise-in-halong-bay.html') Tips for choosing the right cruise in Halong Bay
+                                p
+                                    | Choosing a right cruise in Halong Bay may be a difficult task, especially for the first timers.
+                                a.more(href='/trip-planning/articles-tips/tips-for-choosing-the-right-cruise-in-halong-bay.html') LEARN MORE
+                    .col-md-6
+                        .media
+                            a.pull-left(href='/trip-planning/prepare-go/pick-up--drop-off-time.html')
+                                img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/news/admin/2016/06/bus-001_small.jpg', alt='Pick up/ Drop off time')
+                            .media-body
+                                h5.media-heading
+                                    a(href='/trip-planning/prepare-go/pick-up--drop-off-time.html') Pick up/ Drop off time
+                                p
+                                    | Generally speaking, most cruise trip will start at noontime, thus if you are leaving from Hanoi, you will need to depart between 8:00 and 8:30AM to meet the cruise schedule.
+                                a.more(href='/trip-planning/prepare-go/pick-up--drop-off-time.html') LEARN MORE
+    section.des-owl-wrap
+        .container
+            h2.title24 Recommended Cruises in Halong Bay
+            .owl-inner
+                #owl-des.owl-carousel
+                    .item
+                        .post-single
+                            .bg-default
+                                a.i-header(href='/cruise/glory-cruise.html')
+                                    img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/08/GloryCruise_1_small.jpg', alt='')
+                                    span#w51.heart-o.inline-block.text-center.btnwl(data-toggle='tooltip', data-placement='left', title='Save to wishlist', onclick='return false') 881
+                                .i-body.text-center
+                                    h5.title
+                                        a(href='/cruise/glory-cruise.html') Glory Legend Cruise
+                                    .box-review
+                                        label.rate-1.text-left
+                                            span(style='width: 80%;')
+                                    address
+                                        i.fa.fa-map-marker
+                                        strong Address:
+                                        |  32 Anh Dao St, Ha Long City
+                                    .i-price
+                                        span Prices starting from
+                                        strong US$122
+                                        |                                                per pax
+                                .i-book.text-center.z_14.text-uppercase
+                                    a(href='/cruise/glory-cruise.html')
+                                        | Book now
+                                        i.fa.fa-angle-right
+                    .item
+                        .post-single
+                            .bg-default
+                                a.i-header(href='/cruise/aphrodite-cruise.html')
+                                    img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Aphrodite_3_small.jpg', alt='')
+                                    span#w100.heart-o.inline-block.text-center.btnwl(data-toggle='tooltip', data-placement='left', title='Save to wishlist', onclick='return false') 248
+                                .i-body.text-center
+                                    h5.title
+                                        a(href='/cruise/aphrodite-cruise.html') Aphrodite Cruise
+                                    .box-review
+                                        label.rate-1.text-left
+                                            span(style='width: 100%;')
+                                    address
+                                        i.fa.fa-map-marker
+                                        strong Address:
+                                        |  No.12, Ngoc Chau Marina, Halong
+                                    .i-price
+                                        span Prices starting from
+                                        strong US$160
+                                        |                                                per pax
+                                .i-book.text-center.z_14.text-uppercase
+                                    a(href='/cruise/aphrodite-cruise.html')
+                                        | Book now
+                                        i.fa.fa-angle-right
+                    .item
+                        .post-single
+                            .bg-default
+                                a.i-header(href='/cruise/orchid-cruise.html')
+                                    img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2017/03/Orchid-Cruise_2_small.jpg', alt='')
+                                    span#w108.heart-o.inline-block.text-center.btnwl(data-toggle='tooltip', data-placement='left', title='Save to wishlist', onclick='return false') 480
+                                .i-body.text-center
+                                    h5.title
+                                        a(href='/cruise/orchid-cruise.html') Orchid Cruise
+                                    .box-review
+                                        label.rate-1.text-left
+                                            span(style='width: 100%;')
+                                    address
+                                        i.fa.fa-map-marker
+                                        strong Address:
+                                        |  5/33B Pham Ngu Lao, Hoan Kiem, Hanoi
+                                    .i-price
+                                        span Prices starting from
+                                        strong US$175
+                                        |                                                per pax
+                                .i-book.text-center.z_14.text-uppercase
+                                    a(href='/cruise/orchid-cruise.html')
+                                        | Book now
+                                        i.fa.fa-angle-right
+                    .item
+                        .post-single
+                            .bg-default
+                                a.i-header(href='/cruise/paloma-cruise.html')
+                                    img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Paloma_3_small.jpg', alt='')
+                                    span#w54.heart-o.inline-block.text-center.btnwl(data-toggle='tooltip', data-placement='left', title='Save to wishlist', onclick='return false') 217
+                                .i-body.text-center
+                                    h5.title
+                                        a(href='/cruise/paloma-cruise.html') Paloma Cruise
+                                    .box-review
+                                        label.rate-1.text-left
+                                            span(style='width: 80%;')
+                                    address
+                                        i.fa.fa-map-marker
+                                        strong Address:
+                                        |  6A Le Thanh Tong str, Hon Gai, Ha Long City, Quang Ninh, Vietnam
+                                    .i-price
+                                        span Prices starting from
+                                        strong US$135
+                                        |                                                per pax
+                                .i-book.text-center.z_14.text-uppercase
+                                    a(href='/cruise/paloma-cruise.html')
+                                        | Book now
+                                        i.fa.fa-angle-right
+                    .item
+                        .post-single
+                            .bg-default
+                                a.i-header(href='/cruise/vela-classic.html')
+                                    img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/La-Vela-Classic_1_small.jpg', alt='')
+                                    span#w58.heart-o.inline-block.text-center.btnwl(data-toggle='tooltip', data-placement='left', title='Save to wishlist', onclick='return false') 69
+                                .i-body.text-center
+                                    h5.title
+                                        a(href='/cruise/vela-classic.html') La Vela Classic Cruise
+                                    .box-review
+                                        label.rate-1.text-left
+                                            span(style='width: 80%;')
+                                    address
+                                        i.fa.fa-map-marker
+                                        strong Address:
+                                        |  Unit 201, 2nd Floor, Hanoi Tower - The Office, 49 Hai Ba Trung Str, Hanoi, Vietnam
+                                    .i-price
+                                        span Prices starting from
+                                        strong US$130
+                                        |                                                per pax
+                                .i-book.text-center.z_14.text-uppercase
+                                    a(href='/cruise/vela-classic.html')
+                                        | Book now
+                                        i.fa.fa-angle-right
+                    .item
+                        .post-single
+                            .bg-default
+                                a.i-header(href='/cruise/paradise-cruise.html')
+                                    img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/06/Paradise_Luxury_Cruise_1_small.jpg', alt='')
+                                    span#w69.heart-o.inline-block.text-center.btnwl(data-toggle='tooltip', data-placement='left', title='Save to wishlist', onclick='return false') 463
+                                .i-body.text-center
+                                    h5.title
+                                        a(href='/cruise/paradise-cruise.html') Paradise Luxury Cruise
+                                    .box-review
+                                        label.rate-1.text-left
+                                            span(style='width: 100%;')
+                                    address
+                                        i.fa.fa-map-marker
+                                        strong Address:
+                                        |  Tuan Chau Island, Halong
+                                    div(style='min-height:83px; padding-top: 30px;')
+                                        button.btn.btn-get-price-default.btnGetprice(type='button', alt='Paradise Luxury Cruise', data-currency='$', data-toggle='modal', data-target='#priceModal') Click to get price
+                                .i-book.text-center.z_14.text-uppercase
+                                    a(href='/cruise/paradise-cruise.html')
+                                        | Book now
+                                        i.fa.fa-angle-right
+                    .item
+                        .post-single
+                            .bg-default
+                                a.i-header(href='/cruise/pelican-cruise.html')
+                                    img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/08/Pelican_1_small.jpg', alt='')
+                                    span#w92.heart-o.inline-block.text-center.btnwl(data-toggle='tooltip', data-placement='left', title='Save to wishlist', onclick='return false') 149
+                                .i-body.text-center
+                                    h5.title
+                                        a(href='/cruise/pelican-cruise.html') Pelican Cruise
+                                    .box-review
+                                        label.rate-1.text-left
+                                            span(style='width: 100%;')
+                                    address
+                                        i.fa.fa-map-marker
+                                        strong Address:
+                                        |  #32, Anh Dao St, Ha Long City, Quang Ninh Province
+                                    .i-price
+                                        span Prices starting from
+                                        strong US$133
+                                        |                                                per pax
+                                .i-book.text-center.z_14.text-uppercase
+                                    a(href='/cruise/pelican-cruise.html')
+                                        | Book now
+                                        i.fa.fa-angle-right
+                    .item
+                        .post-single
+                            .bg-default
+                                a.i-header(href='/cruise/signature-cruise.html')
+                                    img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/06/Signature_1_small.jpg', alt='')
+                                    span#w98.heart-o.inline-block.text-center.btnwl(data-toggle='tooltip', data-placement='left', title='Save to wishlist', onclick='return false') 332
+                                .i-body.text-center
+                                    h5.title
+                                        a(href='/cruise/signature-cruise.html') Signature Cruise
+                                    .box-review
+                                        label.rate-1.text-left
+                                            span(style='width: 100%;')
+                                    address
+                                        i.fa.fa-map-marker
+                                        strong Address:
+                                        |  6 Le Thanh Tong St., Hon Gai, Halong, Quang Ninh, Vietnam
+                                    .i-price
+                                        span Prices starting from
+                                        strong US$159
+                                        |                                                per pax
+                                .i-book.text-center.z_14.text-uppercase
+                                    a(href='/cruise/signature-cruise.html')
+                                        | Book now
+                                        i.fa.fa-angle-right
+            .owl-btn.text-center
+                a.btn.btn-style-2a.z_14(href='/cruises/find-a-cruise.html')
+                    | All Halong Bay Cruises
+                    i.fa.fa-angle-right

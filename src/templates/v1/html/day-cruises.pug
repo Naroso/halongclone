@@ -1,0 +1,181 @@
+extends ../index
+
+block page_script
+    script(type='text/javascript', src='../js/pages/cruisecat-dist.js')
+
+block content
+    #container_1.grid_12.t_space_bottom
+        #container_2.cat-banner
+            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/06/Day-Cruises-1.jpg', alt='')
+            .breadcrumb-main
+                .container
+                    ol.breadcrumb
+                        li
+                            a(href='/')
+                                span.reb Home
+                        li
+                            a(href='/cruises/find-a-cruise.html') Find a cruise
+                        li.active Halong Bay Day Cruises
+            h1.z_24.f_hn.text-normal.text-uppercase Halong Bay Day Cruises
+        nav.nav-cat
+            .container
+                ul
+                    li
+                        a(href='/interactive-map.html')
+                            i.inc.inc-map
+                            span Interactive map
+                    li
+                        a(href='/trip-planning/weather.html')
+                            i.inc.inc-weather
+                            span Weather
+                    li
+                        a(href='/trip-planning/prepare-go/how-to-get-to-halong-bay.html')
+                            i.inc.inc-setting
+                            span Getting there
+                    li
+                        a(href='/destinations.html')
+                            i.inc.inc-binoculars
+                            span Attractions
+                    li
+                        a(href='/activities.html')
+                            i.inc.inc-rowing
+                            span Activities
+        #container_3.cat-wrap
+            #container_4.container
+                .cat-header.box-hidden
+                    .socials.pull-right
+                        .likePost
+                            .social
+                                #fb-root
+                                script.
+                                    (function (d, s, id) {
+                                        var js, fjs = d.getElementsByTagName(s)[0];
+                                        if (d.getElementById(id)) {
+                                            return;
+                                        }
+                                        js = d.createElement(s);
+                                        js.id = id;
+                                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                                        fjs.parentNode.insertBefore(js, fjs);
+                                    }(document, 'script', 'facebook-jssdk'));
+                                .fb-like(data-send='true', data-layout='button_count', data-width='80', data-show-faces='true')
+                    h2.title.f_hn.z_24.text-normal.pull-left Halong Bay Day Cruises
+                .cat-intro
+                    .hg-more
+                        p
+                            | Halong Bay Day Cruise is a perfect option for busy travelers who have limitted time but still want to get a glance of the amazing Halong Bay. A day cruise tour can offer you an overview of the Bay with at least 3.5 hours or more (4 hours, 4.5 hours, 6 hours, 6.5 hours, 8 hours, and 10 hours) cruising time in the Bay. Even if with the limited time frame, you will have a wonderful opportunity not only to visit beautiful attractions in Halong Bay such as Titov Island and Heavenly Cave. A day cruise tour doesn’t mean that you will be limited to attend in various activities. On the contrary, you still can take part in a plenty of activities such as paddling through Luon Cave by a sampan,swimming in Soi Sim Beach (Lazalee 6.5 hours Day Cruise); exploring Heaven Cave, kayaking or boat rowing in the deep blue sea waters (Alova Day Cruise); or admiring impressive limestone islets like Fighting Cocks, Duck, Finger, Incense Burner, and Stone Dog (Phoenix Day Cruise).
+                    div
+                        a#readmore Read more
+                .cat-main
+                    .cat-sort
+                        h3.title.f_hn.z_24.text-normal.pull-left Our Top Picks for May
+                        .pull-right
+                            label.inline-block Sort by:
+                            .has-feedback.inline-block
+                                input#sort.form-control(type='text', placeholder='', value='Most Popular')
+                                span.form-control-feedback.fa.fa-angle-down
+                                .sub-most.bg-default
+                                    ul.list-check
+                                        li.active(onclick="sort('priority DESC');") Most Popular
+                                        li(onclick="sort('overall DESC');") Top Rated
+                                        li(onclick="sort('price ASC');") Price (Low - High)
+                                        li(onclick="sort('price DESC');") Price (High - Low)
+                    .cat-list
+                        #result
+                            .row
+                                .col-lg-4.col-sm-6
+                                    .item
+                                        a.cl-img(href='/day-cruise/lazalee-day-cruise.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/09/LAzalee-Cruises_Day-Cruise_1_square.jpg', alt='')
+                                            span#w107.heart-o.inline-block.text-center.btnwl(onclick='return false') 29
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/day-cruise/lazalee-day-cruise.html') L'Azalée Day Cruise
+                                                .box-review
+                                                    label.rate-1
+                                                        span(style='width: 80%;')
+                                                    label.review
+                                                        span.text-bold.inline-block.text-center.n-rate 8.8
+                                                        strong.inline-block.text-uppercase Very good
+                                                        a.n-review.inline-block(href='#')
+                                                            b 2
+                                                            |  reviews
+                                                .price.text-right
+                                                    | From USD
+                                                    label.block.f_hn.z_24
+                                                        sup $
+                                                        b 62
+                                            .cl-schedule.c6
+                                                p Location: 70-72 Ba Trieu, Hanoi
+                                                p Duration: Full Day Cruise
+                                .col-lg-4.col-sm-6
+                                    .item
+                                        a.cl-img(href='/day-cruise/phoenix-day-cruise.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Phoenix_day_cruise_1_square.jpg', alt='')
+                                            span#w81.heart-o.inline-block.text-center.btnwl(onclick='return false') 20
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/day-cruise/phoenix-day-cruise.html') Phoenix Day Cruise
+                                                .box-review
+                                                    label.rate-1
+                                                        span(style='width: 60%;')
+                                                    label.review
+                                                        span.text-bold.inline-block.text-center.n-rate 9.2
+                                                        strong.inline-block.text-uppercase Excellent
+                                                        a.n-review.inline-block(href='#')
+                                                            b 12
+                                                            |  reviews
+                                                .price.text-right
+                                                    | From USD
+                                                    label.block.f_hn.z_24
+                                                        sup $
+                                                        b 55
+                                            .cl-schedule.c6
+                                                p Location: 81C Ly Nam De, Hanoi
+                                                p Duration: Full Day Cruise
+                                .col-lg-4.col-sm-6
+                                    .item
+                                        a.cl-img(href='/day-cruise/alova-day-cruise.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Alova-Day-Cruise_square.jpg', alt='')
+                                            span#w83.heart-o.inline-block.text-center.btnwl(onclick='return false') 16
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/day-cruise/alova-day-cruise.html') Alova Day Cruise
+                                                .box-review
+                                                    label.rate-1
+                                                        span(style='width: 60%;')
+                                                    label.review
+                                                        span.text-bold.inline-block.text-center.n-rate 9.1
+                                                        strong.inline-block.text-uppercase Excellent
+                                                        a.n-review.inline-block(href='#')
+                                                            b 11
+                                                            |  reviews
+                                                .price.text-right
+                                                    | From USD
+                                                    label.block.f_hn.z_24
+                                                        sup $
+                                                        b 42
+                                            .cl-schedule.c6
+                                                p Location: 72 Tran Nhat Duat, Hanoi
+                                                p Duration: Full Day Cruise
+                        .cl-more.text-center
+                            input#show-number(type='hidden', name='show-number', value='12')
+                            input#cruise-number(type='hidden', name='cruise-number', value='3')
+                            input#category_id(type='hidden', value='5')
+                            input#sorthide(type='hidden', value='priority DESC')
+                        form#frmCompare(action='/cruises/compare.html', method='post')
+                            input#compare(type='hidden', value='', name='compare')
+                form#frmCompare(action='/cruises/compare.html', method='post')
+                    input#compare(type='hidden', value='', name='compare')
+                .box-help
+                    img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/skins/v3/images/av-hepl.png', alt='')
+                    h5.z_16.text-bold Looking for a private Halong cruising experience?
+                    p
+                        | Finding a private charter cruise in Halong Bay is as simple as booking a hotel online. Contact our
+                        | charter experts to get free advice and quote.
+                    a.btn.btn-style-1.z_14.text-bold(href='/contact-us.html')
+                        | Ask Us Now
+                        i.fa.fa-angle-right

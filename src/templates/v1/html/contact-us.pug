@@ -1,0 +1,155 @@
+extends ../index
+
+block page_style
+    link(href='../css/contact.css', media='screen', rel='stylesheet', type='text/css')
+
+block page_script
+    script(type='text/javascript', src='../js/pages/jquery.validate.min.js')
+    script(type='text/javascript', src='../js/pages/contact-dist.js')
+
+block hero
+    .cat-banner.cat-banner-us
+        .breadcrumb-main.bg-default
+            .container
+                ol.breadcrumb
+                    li
+                        a(href='/') Home
+                    li.active Contact us
+
+block content
+    #container_1.grid_9.cn-wrap
+        #container_2.grid_9.container
+            #container_3.grid_9.row
+                #container_4.grid_9.col-md-9
+                    .cn-table
+                        h4.hidden-lg.hidden-md.hidden-sm.hidden-xs
+                            | Your enquiry
+                            i.fa.fa-chevron-down
+                        table.tb-one
+                            colgroup
+                                col(width='57%')
+                                col(width='43%')
+                            thead
+                                tr
+                                    th Your enquiry
+                                    th All times are Vietnam time (GMT + 7)
+                            tbody
+                                tr
+                                    td
+                                        h3.c2a.z_18.text-bold.title-3 Customer Support
+                                        p
+                                            | Please let us know what questions you have about traveling to Vietnam, or travel services you wish to have us arrange for you.
+                                            | We will respond to your request within 2-4 hours during business hours or within 8 hours during off-office hours.
+                                    td
+                                        p.text-bold.z_14.th-xs.hidden-lg.hidden-md.hidden-sm All times are Vietnam time (GMT + 7)
+                                        label.c2a.z_24.text-bold.title-2 +84.946.505.505
+                                        p
+                                            a(href='mailto:info@halongbaytours.com') info@halongbaytours.com
+                                        p
+                                            strong Monday to Saturday
+                                            |  8:00am - 5:00pm
+                            tfoot
+                                tr
+                                    td(colspan='2')
+                                        | Please provide as many details as you can if you would like to enquire about services, such as your expected travel
+                                        | date, children's age, group size, dietary requirement if any.
+                    form#form.form-contact(action='', method='post')
+                        table.tb-two
+                            tr
+                                th.title-3 CONTACT US
+                            tr
+                                td
+                            tr
+                                td
+                                    .row
+                                        .col-sm-6
+                                            .form-group.ip-feedback
+                                                label
+                                                    | FIRST NAME
+                                                    span *
+                                                input#first_name.form-control(type='text', name='first_name', placeholder='', value='')
+                                        .col-sm-6
+                                            .form-group.ip-feedback
+                                                label
+                                                    | LAST NAME
+                                                    span *
+                                                input#last_name.form-control(type='text', name='last_name', placeholder='', value='')
+                                    .form-group
+                                        label PLEASE CONTACT ME BY
+                                        ul.list-inline.re-radio
+                                            li
+                                                input#r1(type='radio', value='phone', name='contact', checked='')
+                                                label.normal(for='r1') Phone
+                                            li
+                                                input#r2(type='radio', value='email', name='contact')
+                                                label.normal(for='r2') Email
+                                    .form-group
+                                        label
+                                            | TELEPHONE
+                                            span *
+                                        input#phone.form-control(type='text', placeholder='', name='phone')
+                                    .form-group
+                                        label
+                                            | EMAIL
+                                            span *
+                                        input#email.form-control(type='email', placeholder='', name='email')
+                                    .form-group
+                                        label
+                                            | CONFIRM EMAIL
+                                            span *
+                                        input#remail.form-control(type='email', placeholder='', name='remail')
+                                    .form-group
+                                        label ANY QUESTIONS OR COMMENTS?
+                                        textarea#content.form-control(rows='5', name='content')
+                                    button.btn.btn-style-1d.text-uppercase.z_16
+                                        i.fa.fa-lock
+                                        |  Send Inquiry
+                                    p.cn-note * These fields are required
+                                    .bgSupport
+                                        img(src='../images/support.png', alt='')
+                                        label.block.z_14 Our consultants:
+                                        ul.list-unstyled.list-check
+                                            li Have expertise in: Cruise, Hotel and Tours
+                                            li Can tailor make a holiday to your preference
+                                            li Will find the best value trip for your date
+                    script(src='https://www.google.com/recaptcha/api.js')
+                #container_5.grid_9.col-md-3
+                    .widget.widget-cn
+                        .map
+                            #map(style='width: 100%; height: 100%;')
+                        .widget-body
+                            dl
+                                dt Contact Information:
+                                dd
+                                    i.fa.fa-map-marker
+                                    |  72 Hang Trong St., Hoan Kiem Dist., Hanoi, Vietnam 2000
+                                dd
+                                    i.fa.fa-phone
+                                    |  +84-43577-2907
+                                dd
+                                    i.fa.fa-fax
+                                    |  +84-43577-2908
+                            dl
+                                dt General enquiries:
+                                dd
+                                    i.fa.fa-phone
+                                    |  0084 946 505 505
+                                dd
+                                    i.fa.fa-envelope-o
+                                    |  info@halongbaytours.com
+                                dd
+                                    i.fa.fa-clock-o
+                                    |  Monday to Saturday
+                                    br
+                                    | 8:00am - 5:00pm
+                    script(src='https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false')
+                    .widget.w-item.w-tripad.hidden-xs.hidden-sm
+                        #TA_selfserveprop673.TA_selfserveprop
+                            ul#bj8j1XjWLy.TA_links.FlPrMpkry
+                                li#W4XTuaZhparq.ATH98BHSy4
+                                    a(target='_blank', href='https://www.tripadvisor.com/')
+                                        img(src='https://www.tripadvisor.com/img/cdsi/img2/branding/150_logo-11900-2.png', alt='TripAdvisor')
+                        script(src='https://www.jscache.com/wejs?wtype=selfserveprop&uniq=673&locationId=8467703&lang=en_US&rating=true&nreviews=5&writereviewlink=false&popIdx=true&iswide=false&border=true&display_version=2')
+                    .widget.widget-cardus
+                        img(src='../images/credit-card-us.png', alt='', style='width: 100%')
+

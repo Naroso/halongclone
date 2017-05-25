@@ -1,0 +1,260 @@
+extends ../index
+
+block page_style
+    link(href='../css/faqs.css', media='screen', rel='stylesheet', type='text/css')
+
+block content
+    #container_1.grid_12.t_space_bottom
+        .breadcrumb-main.bg-default
+            .container
+                ol.breadcrumb
+                    li
+                        a(href='/') Home
+                    li.active Frequently Asked Questions
+        #container_2.grid_9.sr-main
+            #container_3.grid_9.container
+                #container_4.grid_9.row
+                    #container_5.grid_9.col-lg-offset-1.col-lg-7.col-md-8
+                        h1.title24 Frequently Asked Questions
+                        form#frmSearch.search-results.form-faqs(method='post', action='')
+                            .form-group.has-feedback
+                                input#keyword.form-control(type='text', placeholder='', name='keyword', value='')
+                                span.form-control-feedback.fa.fa-search.z_24.c2a.search
+                        #faq-accordion.panel-group
+                            .panel
+                                a.active.coll(href='/faq/are-drinks-and-beverages-included-in-a-cruise-trip.html') Are drinks and beverages included in a cruise trip?
+                                .panel-collapse.collapse.in
+                                    .panel-content
+                                        p
+                                            | No, they are not included in any cruise packages. In general, meals are included and in each cabin there are complimentary bottles of mineral water. Some cruise may offer free tea/ coffee in meals but other drinks will be charged.
+                            .panel
+                                a.coll(href='/faq/can-i-go-on-a-cruise-if-i-am-pregnant.html') Can I go on a cruise if I am pregnant?
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | If you are pregnant, we advise you to make a serious check-up with your doctor. If your doctor say you can go, you can. However if you are more than 32 weeks pregnant, we recommend you to hold off your trip as the cruise trip still requires some light activity such as climbing up and down or getting on and off board.
+                            .panel
+                                a.coll(href='/faq/do-we-need-to-pay-for-entrance-fees-when-visiting-caves.html') Do we need to pay for entrance fees when visiting caves?
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | No, you don’t. When you make a booking with us, your cruise trip is already included entrance fees and sightseeing tickets, you don’t have to pay any additional fees.
+                            .panel
+                                a.coll(href='/faq/can-i-order-kid-meals-and-special-dietary-food.html') Can I order kid meals and special dietary food?
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | Yes, you can. Most of cruises in Halong Bay will happily meet any of your special requests. However, please kindly be reminded that you should make note with us well in advance so we can have more time to prepare the most perfect meal for you and your family.
+                            .panel
+                                a.coll(href='/faq/how-long-does-it-take-to-get-to-halong-bay.html') How long does it take to get to Halong Bay
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | The distance from Hanoi to Halong Bay is around 175 km. Traveling by shuttle bus will takes around 4 hours and by private car it is 3.5 hours one way. The road from Hanoi to Sapa may experience traffic jam so please allow extra time for that.
+                            .panel
+                                a.coll(href='/faq/what-should-i-bring-with-me-on-board.html') What should I bring with me on board
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | You are suggested to bring sunblock, sunglasses, insect repellents, wide brim hats, swimming suites, warm clothes in winter, and your
+                                            u original passport
+                                            |  for check in. If you are travelling with young kids, candy, picture books, minigames, learning tools may be helpful.
+                            .panel
+                                a.coll(href='/faq/will-i-be-picked-up-from-my-hotel-in-hanoi.html') Will I be picked up from my hotel in Hanoi?
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | Each cruise has their own policy regarding transfer: some cruises include transfer in their cost, others charge extra fee for transfer.
+                                        p
+                                            | If you book the transfer by shuttle bus, you will only be picked up from your hotel in Hanoi Old Quarter Area (and the West Lake area such as Intercontinental Hanoi Westlake or Sheraton Hanoi). If you stay outside of these areas, you need to take a taxi on your own to our office or to the cruise office to get picked up. An alternative is to book a
+                                            a(href='https://www.halongbaytours.com/transfers.html') private transfer
+                                            | . (Popular hotels located outside of the Old Quarter include Lotte Hotel Center, JW Marriot, to name a few).
+                            .panel
+                                a.coll(href='/faq/should-i-stay-one-night-or-two-nights-in-halong-bay.html') Should I stay one night or two nights in Halong Bay?
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | The answer depends on your budget and your time. If you have enough time and can afford the longer option, you are surely recommended to book 2 night cruise. Some of the listed reasons are as follows:
+                                        p
+                                            | - You will have more time to spend on boat and feel less rushed about the road travel between Hanoi and Halong Bay. Many travelers who cite their only discomfort with taking a 2 day trip is that, they have to do 4 hour road trip on both first and second day of the trip.
+                                        p
+                                            | - A 2 night trip will allow you to explore further parts of the Bay such as Lan Ha Bay, Bai Tu Long Bay, Cat Ba Island and experience different activities like swimming, kayaking, boat rowing, trekking (in Cat Ba National Park), etc. that a 1 night cruise cannot otherwise offer
+                                        p
+                                            | Most cruises use a day boat on their second day program, which will be able to take you to the more secluded caves and beaches in Halong Bay. There will be longer time for kayaking and swimming as well.
+                            .panel
+                                a.coll(href='/faq/would-it-be-possible-to-book-a-cruise-for-2-days-1night-during-tet.html') Would it be possible to book a cruise for 2 days/1night during Tet?
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | During holiday such as Christmas, New Year and Tet, cruise space can fill out very quickly. We suggest you to book a cruise as far in advance as possible if you plan to travel during this time of the year.
+                                        p
+                                            | The following cruises often organize exciting activiites for Tet so you may want to check them out:
+                                            a(href='https://www.halongbaytours.com/cruise/glory-cruise.html') Glory Cruise
+                                            | ,
+                                            a(href='https://www.halongbaytours.com/cruise/indochina-sails-cruise.html') Indochina Sails
+                                            | ,
+                                            a(href='https://www.halongbaytours.com/cruise/vspirit-cruises.html') V'Spirit
+                            .panel
+                                a.coll(href='/faq/does-the-cruise-price-include-transfer-from-hanoi-to-halong-bay.html') Does the cruise price include transfer from Hanoi to Halong Bay?
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | It depends on which cruise you are looking at. All luxury cruises exclude the price of transfer service in their price: most, however, offer shuttle bus that picks you up and drop you off at your hotel for very reasonable cost. Some deluxe cruises and superior already include transfer in their price such as
+                                            a(href='https://www.halongbaytours.com/cruise/glory-cruise.html') Glory Cruise
+                                            |  or
+                                            a(href='https://www.halongbaytours.com/cruise/phoenix-cruise.html') Phoenix Cruise
+                                            | .
+                            .panel
+                                a.coll(href='/faq/any-cruise-offers-spa-service.html') Any cruise offers spa service
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | Spa is an exclusive service and not offered by all cruises due to its luxury nature and limited space on board of most junks. Up to date there are 2 cruises that offer spa service on board:
+                                            a(href='https://www.halongbaytours.com/cruise/au-co-cruise.html') Au Co Cruise
+                                            |  and
+                                            a(href='https://www.halongbaytours.com/cruise/paradise-peak-cruise.html') Paradise Peak Cruise
+                                            | .
+                            .panel
+                                a.coll(href='/faq/what-types-of-entertainment-are-available-on-board.html') What types of entertainment are available on board
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | It really depends on which cruise you are travelling with. Most will offer entertainment facilities in shared room such as DVD player, TV, chess board and some board games. Since the cruise trip lasts only 2 or 3 days, you will not have enough time to get bored on Halong Bay.
+                                        p
+                                            | You can refer to the
+                                            a(href='https://www.halongbaytours.com/activities.html') list of activities
+                                            |  available on each trip to Halong Bay on our website.
+                            .panel
+                                a.coll(href='/faq/what-is-the-minimum-age-requirement-for-infant-to-sail-cruise-in-halong-bay.html') What is the minimum age requirement for infant to sail cruise in Halong Bay
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | There is no strict requirement regarding what age infant are allowed on board. However, we recommend the minimal age for infant to be comfortable on a cruise trip is 6 months old.
+                                        p
+                                            | Infants younger than 4 years old are allowed free on board, accompanied by at least 02 adults. Baby cot is provided only where indicated and must be requested at least 03 days in advance of departure.
+                            .panel
+                                a.coll(href='/faq/what-payment-methods-are-accepted.html') What payment methods are accepted
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | You can pay us through one of the following ways:
+                                        p(style='margin-left:30pt;')
+                                            | •
+                                            u Credit cards
+                                            | : credit card payment is completely secure on our website and can be made online long time in advance of your trip.
+                                        p(style='margin-left:30pt;')
+                                            | •
+                                            u Bank transfer
+                                            | : for large amount of money, you can request for bank transfer to avoid the transaction cost. Please email us for our bank details.
+                                        p(style='margin-left:30pt;')
+                                            | •
+                                            u Cash
+                                            | : you can pay us by cash - we will collect the cash at your hotel or preferred meeting place upon mutual agreement.
+                                            br
+                                        p(style='margin-left:30pt;')
+                                            | Note:
+                                            em
+                                                | As of 2016, there is no credit card fee when you book your cruises on our website, it means you will save 4% of the total booking value!
+                            .panel
+                                a.coll(href='/faq/i-am-a-vegetarian-can-i-request-for-vegetarian-meals-on-board.html') I am a vegetarian. Can I request for vegetarian meals on board
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | Most cruises accept vegetarian meal request. Please notify us of your dietary requirement 48 hours in advance, or ideally at the time of making your reservation.
+                            .panel
+                                a.coll(href='/faq/how-long-in-advance-should-i-make-the-reservation.html') How long in advance should I make the reservation
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | Most cruises posted on our site are filling out fast, for the quality of service and low price offered. We suggest you to make the reservation as soon as possible, especially if you are planning to travel in high season months from September to December. Planning your trip ahead will save you time and hassle.
+                            .panel
+                                a.coll(href='/faq/what-if-i-want-to-cancel-my-booking.html') What if I want to cancel my booking
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | When you decide that you need to cancel your booking, please notify us immediately by email. We do not accept cancellation notice by phone or any other means for verification reason.
+                                        p
+                                            | Please review our cancellation policy below:
+                                        .it-body
+                                            ul.list-dot
+                                                li
+                                                    | More than 30 days prior to check-in: free of charge
+                                                li
+                                                    | From 30 to 7 days prior to check-in: 10% of total rates
+                                                li
+                                                    | From 6 to 3 days prior to check in: 50% of total rates.
+                                                li
+                                                    | Less than 3 days prior to check-in: 100% of total rates.
+                                                li
+                                                    | No-Show: 100% of total rates.
+                            .panel
+                                a.coll(href='/faq/what-does-price-include.html') What does the listed price include
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p(style='margin-left:30pt;')
+                                            | • Unless otherwise noted, all prices listed on our site already
+                                            strong
+                                                u INCLUDE
+                                            |  meals, entrance and sightseeing fees, guide on board and government taxes (10%).
+                                            br
+                                            |    • The listed price does not include New Year and Christmas surcharge, personal expense and tips.
+                                        p(style='margin-left:30pt;')
+                                            | Note:
+                                            em
+                                                | If payment is made by credit cards, it will be subject to a credit card processing fee of 3%.
+                            .panel
+                                a.coll(href='/faq/how-to-book-a-cruise-on-halongbaytours.html') How to reserve for a cruise trip on Halongbaytours.com
+                                .panel-collapse.collapse
+                                    .panel-content
+                                        p
+                                            | You can reserve for your cruise trip or tour to Halong on our website in three simple steps:
+                                        p(style='margin-left:30pt;')
+                                            | • Search for your desired cruise using our search tool, located on the left hand side of the web page, or by clicking on one of the cruise category:
+                                            a(href='https://www.halongbaytours.com/cruises/luxury-cruises.html') Luxury Cruise
+                                            | ,
+                                            a(href='https://www.halongbaytours.com/cruises/deluxe-cruises.html') Deluxe Cruise
+                                            |  or
+                                            a(href='https://www.halongbaytours.com/cruises/superior-cruises.html') Superior Cruise
+                                            br
+                                            |    • Select the cruise that catches your attention. Each cruise is listed with details about price, itineraries and photo gallery, making it easy for you to compare and contrast.
+                                            br
+                                            |    • Click on "Book Now" button and be transferred to the Booking Request Form. We will check the availability of your request and respond in 4 hours (office hours) and 12 hours (non-office hours)
+                        .things-know
+                            h2.title24 Things to Know
+                            ul
+                                li
+                                    h5 WEATHER
+                                    p Information on Halong bay weather and best time to go.
+                                    a.inline-block.text-uppercase(href='/trip-planning/weather.html')
+                                        | Learn more
+                                        i.fa.fa-angle-right
+                                li
+                                    h5 PRACTICAL INFORMATION
+                                    p
+                                        | Information and advice on transport, money, cost, food, restaurants and much more.
+                                    a.inline-block.text-uppercase(href='/trip-planning.html')
+                                        | Learn more
+                                        i.fa.fa-angle-right
+                                li
+                                    h5 VIETNAM VISA
+                                    p
+                                        | Check if you need a visa to Vietnam and information on how to obtain one to visit Vietnam and cruising in Halong Bay.
+                                    a.inline-block.text-uppercase(href='/trip-planning.html')
+                                        | Learn more
+                                        i.fa.fa-angle-right
+                    #container_6.grid_9.col-lg-offset-1.col-lg-3.col-md-4
+                        .widget.widget-support
+                            h5 Customer Support
+                            .widget-body.text-center
+                                .avatar
+                                    img.img-circle(data-src='holder.js/90x90', alt='')
+                                p
+                                    | Got a question? Call us now:
+                                    br
+                                    b.inline-block.z_14 +84-946-505-505
+                                    br
+                                    span.c2a
+                                        | Email:
+                                        a(href='mailto:info@halongbaytours.com') info@halongbaytours.com
+                                p
+                                    a.btn.btn-style-1d.z_14.text-bold(href='/contact-us.html') Contact Us Online

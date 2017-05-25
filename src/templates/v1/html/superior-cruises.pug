@@ -1,0 +1,305 @@
+extends ../index
+
+block page_script
+    script(type='text/javascript', src='../js/pages/cruisecat-dist.js')
+
+block content
+    #container_1.grid_12.t_space_bottom
+        #container_2.cat-banner
+            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/06/Luxury-Cruises-1.jpg', alt='')
+            .breadcrumb-main
+                .container
+                    ol.breadcrumb
+                        li
+                            a(href='/')
+                                span.reb Home
+                        li
+                            a(href='/cruises/find-a-cruise.html') Find a cruise
+                        li.active Halong Bay Budget Cruises
+            h1.z_24.f_hn.text-normal.text-uppercase Halong Bay Budget Cruises
+        nav.nav-cat
+            .container
+                ul
+                    li
+                        a(href='/interactive-map.html')
+                            i.inc.inc-map
+                            span Interactive map
+                    li
+                        a(href='/trip-planning/weather.html')
+                            i.inc.inc-weather
+                            span Weather
+                    li
+                        a(href='/trip-planning/prepare-go/how-to-get-to-halong-bay.html')
+                            i.inc.inc-setting
+                            span Getting there
+                    li
+                        a(href='/destinations.html')
+                            i.inc.inc-binoculars
+                            span Attractions
+                    li
+                        a(href='/activities.html')
+                            i.inc.inc-rowing
+                            span Activities
+        #container_3.cat-wrap
+            #container_4.container
+                .cat-header.box-hidden
+                    .socials.pull-right
+                        .likePost
+                            .social
+                                #fb-root
+                                script.
+                                    (function (d, s, id) {
+                                        var js, fjs = d.getElementsByTagName(s)[0];
+                                        if (d.getElementById(id)) {
+                                            return;
+                                        }
+                                        js = d.createElement(s);
+                                        js.id = id;
+                                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                                        fjs.parentNode.insertBefore(js, fjs);
+                                    }(document, 'script', 'facebook-jssdk'));
+                                .fb-like(data-send='true', data-layout='button_count', data-width='80', data-show-faces='true')
+                    h2.title.f_hn.z_24.text-normal.pull-left Halong Bay Budget Cruises
+                .cat-intro
+                    .hg-more
+                        p
+                            | Halong Bay has a plenty of budget cruise lines. Travelers on a tight budget will be pleased to know about the very large option they have to choose from. Cruising Halong Bay without any hassle about paying extra, with cruises costing as little as $70 per day per person. Some travelers are left wondering forever how they can see so much with so little.
+                            | Cruises listed on our website are carefully selected because we never wish to compromise quality and safety for money. We know that there are many more options but those on our site has passed detailed review before being presented here for you: please rest assured that they are all good options to take.
+                            | Among the cruise trips in budget line are Alova Cruise and Phoenix Cruise. While the first is known for being friendly, the second is especially suited for group of friends who would like to sail out on sea and have fun. If your budget is short, please contact us for last minute deal which we always have ready for you!
+                    div
+                        a#readmore Read more
+                .cat-main
+                    .cat-sort
+                        h3.title.f_hn.z_24.text-normal.pull-left Our Top Picks for May
+                        .pull-right
+                            label.inline-block Sort by:
+                            .has-feedback.inline-block
+                                input#sort.form-control(type='text', placeholder='', value='Most Popular')
+                                span.form-control-feedback.fa.fa-angle-down
+                                .sub-most.bg-default
+                                    ul.list-check
+                                        li.active(onclick="sort('priority DESC');") Most Popular
+                                        li(onclick="sort('overall DESC');") Top Rated
+                                        li(onclick="sort('price ASC');") Price (Low - High)
+                                        li(onclick="sort('price DESC');") Price (High - Low)
+                    .cat-list
+                        #result
+                            .row
+                                .col-lg-4.col-sm-6
+                                    .item
+                                        a.cl-img(href='/cruise/flamingo-cruise.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/07/1.Flamingo Overview2_square.jpg', alt='')
+                                            span#w117.heart-o.inline-block.text-center.btnwl(onclick='return false') 55
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/cruise/flamingo-cruise.html') Flamingo Cruise
+                                                    span.text-special  NEW
+                                                .box-review
+                                                    label.rate-1
+                                                        span(style='width: 60%;')
+                                                    label.review
+                                                        span.text-bold.inline-block.text-center.n-rate 8.7
+                                                        strong.inline-block.text-uppercase Very good
+                                                        a.n-review.inline-block(href='#')
+                                                            b 5
+                                                            |  reviews
+                                                .price.text-right
+                                                    | From USD
+                                                    label.block.f_hn.z_24
+                                                        sup $
+                                                        b 129
+                                            address
+                                                i.fa.fa-map-marker.c2a
+                                                strong Address:
+                                                |  841 Hong Ha, Hoan Kiem, Hanoi
+                                        .cl-checkbox.text-right.hidden-xs
+                                            ul.re-checkbox
+                                                li
+                                                    input#cm117.star-chose(type='checkbox', name='cruise', value='117')
+                                                    label#label117(for='cm117') Add to compare
+                                .col-lg-4.col-sm-6
+                                    .item
+                                        a.cl-img(href='/cruise/annam-junk.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/annam-junk-1_square.jpg', alt='')
+                                            span#w67.heart-o.inline-block.text-center.btnwl(onclick='return false') 9
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/cruise/annam-junk.html') Annam Junk
+                                                .box-review
+                                                    label.rate-1
+                                                        span(style='width: 60%;')
+                                                    label.review
+                                                        span.text-bold.inline-block.text-center.n-rate 8.6
+                                                        strong.inline-block.text-uppercase Very good
+                                                        a.n-review.inline-block(href='#')
+                                                            b 9
+                                                            |  reviews
+                                                .price.text-right
+                                                    | From USD
+                                                    label.block.f_hn.z_24
+                                                        sup $
+                                                        b 123
+                                            address
+                                                i.fa.fa-map-marker.c2a
+                                                strong Address:
+                                                |  2 Halong Str-Baichay Dist- Halong city
+                                        .cl-checkbox.text-right.hidden-xs
+                                            ul.re-checkbox
+                                                li
+                                                    input#cm67.star-chose(type='checkbox', name='cruise', value='67')
+                                                    label#label67(for='cm67') Add to compare
+                                .col-lg-4.col-sm-6
+                                    .item
+                                        a.cl-img(href='/cruise/oriental-sails.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Oriental-Sails_1_square.jpg', alt='')
+                                            span#w60.heart-o.inline-block.text-center.btnwl(onclick='return false') 31
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/cruise/oriental-sails.html') Oriental Sails
+                                                .box-review
+                                                    label.rate-1
+                                                        span(style='width: 60%;')
+                                                    label.review
+                                                        span.text-bold.inline-block.text-center.n-rate 8.6
+                                                        strong.inline-block.text-uppercase Very good
+                                                        a.n-review.inline-block(href='#')
+                                                            b 34
+                                                            |  reviews
+                                                .price.text-right
+                                                    | From USD
+                                                    label.block.f_hn.z_24
+                                                        sup $
+                                                        b 125
+                                            address
+                                                i.fa.fa-map-marker.c2a
+                                                strong Address:
+                                                |  No. 6A Lê Thánh Tông Str., Hòn Gai, Quang Ninh, Vietnam
+                                            #owl-home-1
+                                                .tag
+                                                    i.fa.fa-tags
+                                                    |  Summer Promotion: Only $115 pp including transfer
+                                        .cl-checkbox.text-right.hidden-xs
+                                            ul.re-checkbox
+                                                li
+                                                    input#cm60.star-chose(type='checkbox', name='cruise', value='60')
+                                                    label#label60(for='cm60') Add to compare
+                                .col-lg-4.col-sm-6.mb-hide
+                                    .item
+                                        a.cl-img(href='/cruise/vspirit-cruises.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Vspirit_1_square.jpg', alt='')
+                                            span#w91.heart-o.inline-block.text-center.btnwl(onclick='return false') 28
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/cruise/vspirit-cruises.html') V'Spirit Cruises
+                                                .box-review
+                                                    label.rate-1
+                                                        span(style='width: 80%;')
+                                                    label.review
+                                                        span.text-bold.inline-block.text-center.n-rate 8.9
+                                                        strong.inline-block.text-uppercase Very good
+                                                        a.n-review.inline-block(href='#')
+                                                            b 34
+                                                            |  reviews
+                                                .price.text-right
+                                                    | From USD
+                                                    label.block.f_hn.z_24
+                                                        sup $
+                                                        b 125
+                                            address
+                                                i.fa.fa-map-marker.c2a
+                                                strong Address:
+                                                |  Tuan Chau Wharf, Tuan Chau Island, Halong, Vietnam
+                                        .cl-checkbox.text-right.hidden-xs
+                                            ul.re-checkbox
+                                                li
+                                                    input#cm91.star-chose(type='checkbox', name='cruise', value='91')
+                                                    label#label91(for='cm91') Add to compare
+                                .col-lg-4.col-sm-6.mb-hide
+                                    .item
+                                        a.cl-img(href='/cruise/halong-party-cruise.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Oasis-Bay-Cruise-4_square.jpg', alt='')
+                                            span#w97.heart-o.inline-block.text-center.btnwl(onclick='return false') 49
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/cruise/halong-party-cruise.html') Halong Party Cruise
+                                                .box-review
+                                                    label.rate-1
+                                                        span(style='width: 60%;')
+                                                    label.review
+                                                        span.text-bold.inline-block.text-center.n-rate 8.4
+                                                        strong.inline-block.text-uppercase Very good
+                                                        a.n-review.inline-block(href='#')
+                                                            b 9
+                                                            |  reviews
+                                                .price.text-right
+                                                    | From USD
+                                                    label.block.f_hn.z_24
+                                                        sup $
+                                                        b 103
+                                            address
+                                                i.fa.fa-map-marker.c2a
+                                                strong Address:
+                                                |  26 Tuan Chau Harbour, Tuan Chau Island, Halong Bay, Quảng Ninh, Vietnam
+                                        .cl-checkbox.text-right.hidden-xs
+                                            ul.re-checkbox
+                                                li
+                                                    input#cm97.star-chose(type='checkbox', name='cruise', value='97')
+                                                    label#label97(for='cm97') Add to compare
+                                .col-lg-4.col-sm-6.mb-hide
+                                    .item
+                                        a.cl-img(href='/cruise/phoenix-cruise.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Phoenix-Cruise_1_square.jpg', alt='')
+                                            span#w61.heart-o.inline-block.text-center.btnwl(onclick='return false') 42
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/cruise/phoenix-cruise.html') Phoenix Cruise
+                                                .box-review
+                                                    label.rate-1
+                                                        span(style='width: 60%;')
+                                                    label.review
+                                                        span.text-bold.inline-block.text-center.n-rate 9.1
+                                                        strong.inline-block.text-uppercase Excellent
+                                                        a.n-review.inline-block(href='#')
+                                                            b 54
+                                                            |  reviews
+                                                .price.text-right
+                                                    | From USD
+                                                    label.block.f_hn.z_24
+                                                        sup $
+                                                        b 125
+                                            address
+                                                i.fa.fa-map-marker.c2a
+                                                strong Address:
+                                                |  Group 4, Area 5, Bai Chay Str, Quang Ninh
+                                        .cl-checkbox.text-right.hidden-xs
+                                            ul.re-checkbox
+                                                li
+                                                    input#cm61.star-chose(type='checkbox', name='cruise', value='61')
+                                                    label#label61(for='cm61') Add to compare
+                        .cl-more.text-center
+                            input#show-number(type='hidden', name='show-number', value='12')
+                            input#cruise-number(type='hidden', name='cruise-number', value='7')
+                            input#category_id(type='hidden', value='3')
+                            input#sorthide(type='hidden', value='priority DESC')
+                            a.inline-block.c6.show-more
+                                | Show More
+                                i.fa.fa-chevron-down
+                        form#frmCompare(action='/cruises/compare.html', method='post')
+                            input#compare(type='hidden', value='', name='compare')
+                form#frmCompare(action='/cruises/compare.html', method='post')
+                    input#compare(type='hidden', value='', name='compare')
+                .box-help
+                    img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/skins/v3/images/av-hepl.png', alt='')
+                    h5.z_16.text-bold Looking for a private Halong cruising experience?
+                    p
+                        | Finding a private charter cruise in Halong Bay is as simple as booking a hotel online. Contact our
+                        | charter experts to get free advice and quote.
+                    a.btn.btn-style-1.z_14.text-bold(href='/contact-us.html')
+                        | Ask Us Now
+                        i.fa.fa-angle-right

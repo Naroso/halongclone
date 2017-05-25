@@ -1,0 +1,563 @@
+.owl-wrapper-outer img:hover {
+  cursor: pointer;
+}
+
+.box-help .btn {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -khtml-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* 5.   Banner
+--------------------------------------------------------------------------------*/
+
+.cat-banner {
+  position: relative;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+  }
+  img {
+    width: 100%;
+    min-height: 209px;
+  }
+  .breadcrumb-main {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    .breadcrumb li {
+      color: #fff;
+      &:before, a {
+        color: #fff;
+      }
+    }
+  }
+  h1 {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    bottom: 50px;
+    z-index: 9;
+  }
+}
+
+.nav-cat {
+  background-color: #edf0f2;
+  ul li {
+    float: left;
+    width: 20%;
+    border-right: 1px solid rgba(202, 202, 202, 0.8);
+    &:first-child {
+      border-left: 1px solid rgba(202, 202, 202, 0.8);
+    }
+    a {
+      padding: 20px 10px;
+      font-weight: 700;
+      font-size: 14px;
+      color: #535353;
+      display: block;
+      text-align: center;
+      span {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.inc {
+  background-image: url(../images/cruises/ic-nav-cat.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  height: 31px;
+}
+
+.inc-map {
+  width: 39px;
+  background-position: 0 0;
+}
+
+.inc-weather {
+  width: 41px;
+  background-position: -44px 0;
+}
+
+.inc-setting {
+  width: 32px;
+  background-position: -89px 0;
+}
+
+.inc-binoculars {
+  width: 28px;
+  background-position: -127px 0;
+}
+
+.inc-rowing {
+  width: 38px;
+  background-position: -160px 0;
+}
+
+.cat-wrap {
+  padding-top: 50px;
+}
+
+.cat-header {
+  margin-bottom: 40px;
+  padding-left: 170px;
+  background: url("../images/cruises/best-label.png") no-repeat top left;
+  min-height: 120px;
+  .socials {
+    overflow: hidden;
+  }
+}
+
+.cat-header-title {
+  min-height: 28px;
+}
+
+.cat-header-intro {
+  padding-right: 270px;
+  margin-top: 10px;
+  .form-control {
+    width: 220px;
+    border-radius: 0;
+    color: #000;
+    margin-top: 12px;
+  }
+}
+
+.box-review {
+  padding-top: 2px;
+  label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .review {
+    position: relative;
+    padding-left: 26px;
+    font-size: 11px;
+    color: #666;
+    font-weight: normal;
+    margin-left: 5px;
+    .n-rate {
+      width: 24px;
+      height: 17px;
+      line-height: 17px;
+      background-color: #2db300;
+      color: #fff;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -khtml-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-border-radius: 3px;
+      -khtml-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      border-radius: 3px;
+    }
+    strong {
+      color: #2db300;
+    }
+    .n-review {
+      position: relative;
+      padding-left: 5px;
+      margin-left: 3px;
+      &:before {
+        content: '';
+        display: inline-block;
+        height: 10px;
+        width: 1px;
+        background-color: #000;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -khtml-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+.heart-o {
+  position: absolute;
+  z-index: 10;
+  top: 15px;
+  right: 15px;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  -khtml-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  &:before {
+    width: 24px;
+    height: 24px;
+    line-height: 26px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 50%;
+    -khtml-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    content: '\f004';
+    display: inline-block;
+    font-family: 'FontAwesome';
+    margin-right: 5px;
+    -webkit-transition: all 0.3s;
+    -khtml-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  &:hover:before {
+    background-color: #fff;
+    color: #144aa8;
+  }
+  &.love:before {
+    background-color: #fff;
+    color: #0d6dc3;
+  }
+}
+
+.nav-tabs-top-cruise {
+  border-bottom: none;
+  border-top: 1px solid #d5d5d5;
+  margin-bottom: 18px;
+  li {
+    margin-bottom: 0;
+    a {
+      padding: 12px 15px;
+      border: none;
+      border-top: 4px solid #d5d5d5 !important;
+      margin: 0;
+      color: #000;
+      text-transform: uppercase;
+      border-radius: 0;
+      background-color: #fff !important;
+      &:hover {
+        color: #0054a0;
+      }
+    }
+    &:last-child a {
+      border-top-color: transparent !important;
+    }
+    &.active a {
+      color: #0054a0;
+      border: none !important;
+      border-top: 4px solid #0054a0 !important;
+    }
+  }
+}
+
+.owl-carousel-top-cruise img {
+  width: 100%;
+}
+
+.sync1-wrap {
+  position: relative;
+  .heart-o {
+    right: 13px;
+    top: 12px;
+    z-index: 99;
+    cursor: pointer;
+    position: absolute;
+  }
+}
+
+.sync2-wrap {
+  margin: 0 -2px;
+  padding-top: 3px;
+  .item {
+    padding: 0 2px;
+  }
+}
+
+.cruise-item {
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(202, 202, 202, 0.8);
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.tc-label {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  background-color: #2db300;
+  -webkit-border-radius: 50%;
+  -khtml-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  left: -70px;
+  top: 0;
+}
+
+.tc-header {
+  position: relative;
+  margin-bottom: 14px;
+  padding-right: 88px;
+  .title24 {
+    margin-bottom: 5px;
+  }
+  .price {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    b {
+      font-size: 26px;
+    }
+    sup {
+      top: -.1em;
+    }
+    span {
+      line-height: 1;
+    }
+  }
+}
+
+.quote-cus {
+  margin-top: 10px;
+}
+
+.top-cruise-body {
+  padding-left: 70px;
+}
+
+.tc-footer {
+  margin-top: 25px;
+  ul li {
+    margin-bottom: 6px;
+    color: #0054a0;
+    strong {
+      color: #000;
+    }
+  }
+  .btn {
+    margin-top: 10px;
+    border-radius: 1px;
+    width: 162px;
+  }
+}
+
+.cruise-more {
+  padding: 50px 0 64px;
+  .btn {
+    color: #6a6a6a;
+  }
+}
+
+.box-help {
+  position: relative;
+  background-color: rgba(167, 187, 207, 0.3);
+  padding: 30px 230px 30px 185px;
+  margin-bottom: 80px;
+  img {
+    position: absolute;
+    left: 55px;
+    bottom: 0;
+  }
+  .btn {
+    position: absolute;
+    right: 30px;
+    padding: 6px 30px;
+    background-color: #2db300;
+    .fa {
+      margin-left: 5px;
+    }
+  }
+  h5 {
+    margin-bottom: 10px;
+  }
+}
+
+.price-mb {
+  border-top: 1px solid #e0e4e6;
+}
+
+.price-mb-inner {
+  display: inline-block;
+  margin-top: -13px;
+  padding: 0 8px;
+  strong {
+    margin: 5px 0 3px;
+  }
+}
+
+@media (max-width: 991px) {
+  .cat-banner h1 {
+    bottom: 25px;
+  }
+  .nav-cat ul li a {
+    padding: 12px 2px;
+    span {
+      display: none;
+    }
+  }
+  .cat-wrap {
+    padding-top: 20px;
+  }
+  .cat-header {
+    .pull-left, .pull-right {
+      float: none !important;
+    }
+    .socials {
+      margin-top: 8px;
+    }
+  }
+  .box-help {
+    padding: 20px 190px 20px 130px;
+    img {
+      left: 15px;
+    }
+  }
+  .cruise-item {
+    border: none !important;
+    padding: 0;
+    margin-bottom: 25px;
+  }
+  .cat-header-intro {
+    padding-right: 0;
+  }
+  .top-cruise-body {
+    padding: 30px 12px 16px;
+    text-align: center;
+    border: 1px solid #e0e4e6;
+    margin-top: -1px;
+  }
+  .tc-header {
+    padding-right: 0;
+  }
+  .tc-label {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -khtml-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border: 2px solid #fff;
+    top: -54px;
+  }
+  .cruise-more {
+    padding: 0 0 35px;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-cat .container {
+    padding: 0;
+  }
+  .cat-banner {
+    min-height: 207px;
+    background-image: url(../images/cruises/best-cruise-banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    h1 {
+      padding: 10px 20px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .box-help {
+    overflow: hidden;
+    padding: 20px 95px 25px 12px;
+    margin-bottom: 50px;
+    img {
+      bottom: 0;
+      right: 0;
+      top: unset;
+      left: unset;
+    }
+    .btn {
+      margin-top: 25px;
+      position: static;
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .cat-header {
+    padding-left: 0;
+    background-position: top center;
+    padding-top: 138px;
+    text-align: center;
+  }
+  .cat-header-intro .form-control {
+    margin: 12px auto 0;
+  }
+  .nav-tabs-top-cruise {
+    .block-xs {
+      display: block;
+    }
+    li {
+      width: 33.333%;
+      text-align: center;
+    }
+  }
+}
+
+.bestcruise {
+  padding: 24px 0 18px;
+  line-height: 24px;
+  h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  ul li strong {
+    display: inline-block;
+    min-width: 34px;
+  }
+}

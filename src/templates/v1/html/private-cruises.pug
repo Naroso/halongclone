@@ -1,0 +1,259 @@
+extends ../index
+
+block page_script
+    script(type='text/javascript', src='../js/pages/cruisecat-dist.js')
+
+block content
+    #container_1.grid_12.t_space_bottom
+        #container_2.cat-banner
+            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/06/Private-Cruises-1.jpg', alt='')
+            .breadcrumb-main
+                .container
+                    ol.breadcrumb
+                        li
+                            a(href='/')
+                                span.reb Home
+                        li
+                            a(href='/cruises/find-a-cruise.html') Find a cruise
+                        li.active Halong Bay Private Charter Cruises
+            h1.z_24.f_hn.text-normal.text-uppercase Halong Bay Private Charter Cruises
+        nav.nav-cat
+            .container
+                ul
+                    li
+                        a(href='/interactive-map.html')
+                            i.inc.inc-map
+                            span Interactive map
+                    li
+                        a(href='/trip-planning/weather.html')
+                            i.inc.inc-weather
+                            span Weather
+                    li
+                        a(href='/trip-planning/prepare-go/how-to-get-to-halong-bay.html')
+                            i.inc.inc-setting
+                            span Getting there
+                    li
+                        a(href='/destinations.html')
+                            i.inc.inc-binoculars
+                            span Attractions
+                    li
+                        a(href='/activities.html')
+                            i.inc.inc-rowing
+                            span Activities
+        #container_3.cat-wrap
+            #container_4.container
+                .cat-header.box-hidden
+                    .socials.pull-right
+                        .likePost
+                            .social
+                                #fb-root
+                                script.
+                                    (function (d, s, id) {
+                                        var js, fjs = d.getElementsByTagName(s)[0];
+                                        if (d.getElementById(id)) {
+                                            return;
+                                        }
+                                        js = d.createElement(s);
+                                        js.id = id;
+                                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                                        fjs.parentNode.insertBefore(js, fjs);
+                                    }(document, 'script', 'facebook-jssdk'));
+                                .fb-like(data-send='true', data-layout='button_count', data-width='80', data-show-faces='true')
+                    h2.title.f_hn.z_24.text-normal.pull-left Halong Bay Private Charter Cruises
+                .cat-intro
+                    .hg-more
+                        p
+                            | Private cruise is an ideal option for groups who want to celebrate privacy and intimacy. Most cruises in Halong Bay of all classes: luxury, deluxe and superior, offer this charter options so you will be pleased to know that you have a lot to select from. Not only various in price, charter cruises also range in capacity, from as small as 1 cabin cruise (Bhaya). You will be provided with food, private tour guide, tour program and you can even craft your own itinerary with a number of cruise trips.
+                    div
+                        a#readmore Read more
+                .cat-main
+                    .cat-sort
+                        h3.title.f_hn.z_24.text-normal.pull-left Our Top Picks for May
+                        .pull-right
+                            label.inline-block Sort by:
+                            .has-feedback.inline-block
+                                input#sort.form-control(type='text', placeholder='', value='Most Popular')
+                                span.form-control-feedback.fa.fa-angle-down
+                                .sub-most.bg-default
+                                    ul.list-check
+                                        li.active(onclick="sort('priority DESC');") Most Popular
+                                        li(onclick="sort('overall DESC');") Top Rated
+                                        li(onclick="sort('price ASC');") Price (Low - High)
+                                        li(onclick="sort('price DESC');") Price (High - Low)
+                    .cat-list
+                        #result
+                            .row
+                                .col-lg-4.col-sm-6
+                                    .item
+                                        a.cl-img(href='/private/lazalee-private-charter.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/admin/2016/08/LAzalee_PREMIUM-PRIVATE-DAY_1_square.jpg', alt='')
+                                            span#w120.heart-o.inline-block.text-center.btnwl(onclick='return false') 36
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/private/lazalee-private-charter.html') L'Azalee Private Charter
+                                                    span.text-special  NEW
+                                                    label.rate-1.inline-block
+                                                        span(style='width: 80%;')
+                                                .price.c6.text-right
+                                                    i.ic.ic-users
+                                                    span.inline-block.text-middle
+                                                        | 2
+                                            p.histo
+                                                | In June 2015, a fleet of 4 new private cruises in Ha Long Bay was officially put into the operation ...
+                                        .cl-checkbox.box-hidden
+                                            strong.pull-left.c5a From $206
+                                            ul.re-checkbox.pull-right.hidden-xs
+                                                // data-toggle="modal" data-target="#compareModal"
+                                                li
+                                                    input#cm120.star-chose(type='checkbox', name='cruise', value='120')
+                                                    label#label120.lbltextcompare(for='cm120', onclick='') Add to compare
+                                .col-lg-4.col-sm-6
+                                    .item
+                                        a.cl-img(href='/private/bhaya-legend-cruise.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Legend-Halong-Private-Charter-1a_square.jpg', alt='')
+                                            span#w87.heart-o.inline-block.text-center.btnwl(onclick='return false') 21
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/private/bhaya-legend-cruise.html') Legend Halong Private Charter
+                                                    label.rate-1.inline-block
+                                                        span(style='width: 100%;')
+                                                .woo.c6 Wooden Junk | 32m | 2015
+                                                .price.c6.text-right
+                                                    i.ic.ic-users
+                                                    span.inline-block.text-middle
+                                                        | 8
+                                            p.histo
+                                                | Bhaya Legend Cruise is one of the best options for you if you want a trip of total comfort and luxur...
+                                        .cl-checkbox.box-hidden
+                                            strong.pull-left.c5a From $700
+                                            ul.re-checkbox.pull-right.hidden-xs
+                                                // data-toggle="modal" data-target="#compareModal"
+                                                li
+                                                    input#cm87.star-chose(type='checkbox', name='cruise', value='87')
+                                                    label#label87.lbltextcompare(for='cm87', onclick='') Add to compare
+                                .col-lg-4.col-sm-6
+                                    .item
+                                        a.cl-img(href='/private/princess-junk-cruise.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Princess-Junk-_1r_square.jpg', alt='')
+                                            span#w75.heart-o.inline-block.text-center.btnwl(onclick='return false') 19
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/private/princess-junk-cruise.html') L'Amour Junk Private Charter
+                                                    label.rate-1.inline-block
+                                                        span(style='width: 100%;')
+                                                .woo.c6 Wooden Junk | 17m | 2010
+                                                .price.c6.text-right
+                                                    i.ic.ic-users
+                                                    span.inline-block.text-middle
+                                                        | 2
+                                            p.histo
+                                                | If you are on the seek for a romantic cruise for two, Princess Junk should be the best option. ...
+                                        .cl-checkbox.box-hidden
+                                            strong.pull-left.c5a From $680
+                                            ul.re-checkbox.pull-right.hidden-xs
+                                                // data-toggle="modal" data-target="#compareModal"
+                                                li
+                                                    input#cm75.star-chose(type='checkbox', name='cruise', value='75')
+                                                    label#label75.lbltextcompare(for='cm75', onclick='') Add to compare
+                                .col-lg-4.col-sm-6.mb-hide
+                                    .item
+                                        a.cl-img(href='/private/au-co-private-charter-cruise.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Auco-Cruise-8_square.jpg', alt='')
+                                            span#w109.heart-o.inline-block.text-center.btnwl(onclick='return false') 3
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/private/au-co-private-charter-cruise.html') Au Co Private Charter Cruise
+                                                    span.text-special  NEW
+                                                    label.rate-1.inline-block
+                                                        span(style='width: 100%;')
+                                                .woo.c6 High-strength steel | 56m | April 2012
+                                                .price.c6.text-right
+                                                    i.ic.ic-users
+                                                    span.inline-block.text-middle
+                                                        | 65
+                                            p.histo
+                                                | Among luxury cruises in Halong Bay, The Au Co is the largest vessel which can be used for charter wi...
+                                        .cl-checkbox.box-hidden
+                                            strong.pull-left.c5a From $18000
+                                            ul.re-checkbox.pull-right.hidden-xs
+                                                // data-toggle="modal" data-target="#compareModal"
+                                                li
+                                                    input#cm109.star-chose(type='checkbox', name='cruise', value='109')
+                                                    label#label109.lbltextcompare(for='cm109', onclick='') Add to compare
+                                .col-lg-4.col-sm-6.mb-hide
+                                    .item
+                                        a.cl-img(href='/private/glory-legend-private-charter-cruise.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Glory-Legend-Cruise_17_square.jpg', alt='')
+                                            span#w110.heart-o.inline-block.text-center.btnwl(onclick='return false') 4
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/private/glory-legend-private-charter-cruise.html') Glory Legend Private Charter Cruise
+                                                    span.text-special  NEW
+                                                    label.rate-1.inline-block
+                                                        span(style='width: 100%;')
+                                                .woo.c6 Wooden Junk | 40m | December 2014
+                                                .price.c6.text-right
+                                                    i.ic.ic-users
+                                                    span.inline-block.text-middle
+                                                        | 34
+                                            p.histo
+                                                | Among the vast collection of cruises in Halong Bay, Glory Legend is a perfect choice for mid-size gr...
+                                        .cl-checkbox.box-hidden
+                                            strong.pull-left.c5a From $3800
+                                            ul.re-checkbox.pull-right.hidden-xs
+                                                // data-toggle="modal" data-target="#compareModal"
+                                                li
+                                                    input#cm110.star-chose(type='checkbox', name='cruise', value='110')
+                                                    label#label110.lbltextcompare(for='cm110', onclick='') Add to compare
+                                .col-lg-4.col-sm-6.mb-hide
+                                    .item
+                                        a.cl-img(href='/private/paradise-luxury-private-charter-cruise.html')
+                                            img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/upload/cruise/dangth/2016/06/Paradise_Luxury_Cruise_2_square.jpg', alt='')
+                                            span#w111.heart-o.inline-block.text-center.btnwl(onclick='return false') 22
+                                        .cl-caption
+                                            .has-feedback
+                                                h5.z_18.f_hn.text-bold.c2a
+                                                    a(href='/private/paradise-luxury-private-charter-cruise.html') Paradise Luxury Private Charter Cruise
+                                                    span.text-special  NEW
+                                                    label.rate-1.inline-block
+                                                        span(style='width: 100%;')
+                                                .woo.c6 Wooden Junk | 41.5m | November 2011
+                                                .price.c6.text-right
+                                                    i.ic.ic-users
+                                                    span.inline-block.text-middle
+                                                        | 34
+                                            p.histo
+                                                | Featuring 17 lavishly decorated cabins, a cozy and stylish dining room, and a spacious sundeck with ...
+                                        .cl-checkbox.box-hidden
+                                            strong.pull-left.c5a From $7000
+                                            ul.re-checkbox.pull-right.hidden-xs
+                                                // data-toggle="modal" data-target="#compareModal"
+                                                li
+                                                    input#cm111.star-chose(type='checkbox', name='cruise', value='111')
+                                                    label#label111.lbltextcompare(for='cm111', onclick='') Add to compare
+                        .cl-more.text-center
+                            input#show-number(type='hidden', name='show-number', value='12')
+                            input#cruise-number(type='hidden', name='cruise-number', value='9')
+                            input#category_id(type='hidden', value='4')
+                            input#sorthide(type='hidden', value='priority DESC')
+                            a.inline-block.c6.show-more
+                                | Show More
+                                i.fa.fa-chevron-down
+                        form#frmCompare(action='/cruises/compare.html', method='post')
+                            input#compare(type='hidden', value='', name='compare')
+                form#frmCompare(action='/cruises/compare.html', method='post')
+                    input#compare(type='hidden', value='', name='compare')
+                .box-help
+                    img(src='https://halongbay-m4htahr3pzs8oxbgi8.stackpathdns.com/skins/v3/images/av-hepl.png', alt='')
+                    h5.z_16.text-bold Still need help in deciding your charter?
+                    p
+                        | We are confident that we can find you a perfect match. Contact our
+                        | charter experts today for the most updated information to make an informed decision.
+                    a.btn.btn-style-1.z_14.text-bold(href='/contact-us.html')
+                        | Ask Us Now
+                        i.fa.fa-angle-right
